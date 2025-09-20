@@ -135,7 +135,7 @@
 
     {{--workshop section--}}
     <section>
-        <div class="container section-two-bg py-120">
+        <div class="container section-two-bg py-60">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-title text-center">
@@ -203,7 +203,7 @@
         </div>
     </section>
 
-    <section class="about-section section-two-bg py-120">
+    <section class="about-section section-two-bg py-60">
         <div class="container">
             <div class="row row-gap-4">
                 <div class="col-lg-6 align-self-center">
@@ -252,7 +252,7 @@
         </div>
     </section>
 
-    <section class="feature-section py-120">
+    <section class="feature-section py-60">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -427,7 +427,7 @@
         </div>
     </section>
 
-    <section class="generate-image-section section-two-bg py-120">
+    <section class="generate-image-section section-two-bg py-60">
         <div class="container">
             <div class="row row-gap-5 justify-content-between">
                 <div class="col-lg-6 col-xl-5 align-self-center">
@@ -488,7 +488,7 @@
         </div>
     </section>
 
-    <section class="portfolio-section section-one-bg py-120">
+    <section class="portfolio-section section-one-bg py-60">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -639,7 +639,7 @@
         </div>
     </div>
 
-    <section class="working-process-section section-one-bg py-120">
+    <section class="working-process-section section-one-bg py-60">
         <div class="container">
             <div class="row row-gap-5">
                 <div class="col-xl-6">
@@ -768,7 +768,7 @@
         </div>
     </section>
 
-    {{--    <section class="pricing-section section-two-bg py-120">--}}
+    {{--    <section class="pricing-section section-two-bg py-60">--}}
     {{--        <div class="container">--}}
     {{--            <div class="row">--}}
     {{--                <div class="col-lg-12">--}}
@@ -831,7 +831,7 @@
     {{--        </div>--}}
     {{--    </section>--}}
 
-    <section class="testimonials-section section-one-bg py-120">
+    <section class="testimonials-section section-one-bg py-60">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -977,7 +977,7 @@
         </div>
     </section>
 
-    <section class="call-to-action-section section-base-bg py-120">
+    <section class="call-to-action-section section-base-bg py-60">
         <div class="container">
             <div class="row row-gap-5 justify-content-between">
                 <div class="col-lg-6 col-xl-5 align-self-center">
@@ -1008,7 +1008,7 @@
         </div>
     </section>
 
-    <section class="blog-section section-one-bg py-120">
+    <section class="blog-section section-one-bg py-60">
         <div class="container">
             <div class="row row-gap-4 justify-content-center">
                 <div class="col-md-8 align-self-end">
@@ -1030,28 +1030,25 @@
                 <div class="col-lg-12">
                     <div class="blog-slider swiper">
                         <div class="swiper-wrapper">
-                            @foreach($emploees as $emploee)
+                            @foreach($posts as $post)
                                 <div class="swiper-slide">
                                     <div class="blog-grid-item">
                                         <div class="blog-date">
                                             <div class="bar-icon"></div>
-                                            ۲۱ تیر ۱۴۰۴
+                                            {{jdate($post->updated_at)->ago()}}
                                         </div>
-                                        <a href="blog-details.html">
+                                        <a href="{{url('محتوای-آموزشی/'.$post->slug)}}">
                                             <figure class="image-effect">
-                                                <img src="{{ asset($emploee->image) }}" alt="blog images"
-                                                     class="img-fluid w-100">
+                                                <img src="{{asset($post->image)}}" alt="{{$post->title}}" class="img-fluid w-100">
                                             </figure>
                                         </a>
                                         <div class="post-type">
-                                            مدرن
+                                            آموزش
                                             <div class="bar-icon2"></div>
                                         </div>
                                         <div class="blog-content">
                                             <h4>
-                                                <a href="blog-details.html">۵ روند برتر تولید تصویر هوش مصنوعی که باید
-                                                    در
-                                                    سال ۲۰۲۵ به آنها توجه کرد</a>
+                                                <a href="{{url('محتوای-آموزشی/'.$post->slug)}}">{{ Str::words(preg_replace('/&[^;]+;/', ' ', strip_tags($post->description)), 10, ' ...') }}</a>
                                             </h4>
                                         </div>
                                     </div>
@@ -1066,7 +1063,7 @@
         </div>
     </section>
 
-    <section class="company-section section-two-bg py-100">
+    <section class="company-section section-two-bg py-60">
         <div class="container">
             <div class="row mb-60">
                 <div class="col-lg-12">
@@ -1092,7 +1089,7 @@
         </div>
     </section>
 
-    <section class="team-section section-one-bg py-120">
+    <section class="team-section section-one-bg py-60">
         <div class="container">
             <div class="row row-gap-4 justify-content-between align-items-end">
                 <div class="col-md-8 align-self-end">
