@@ -3,8 +3,8 @@
     [Master Stylesheets]
 
     Theme Name:     Pixgix
-    Theme URL:      
-    Description:    PixgiX- Ai image Generator HTML Template      
+    Theme URL:
+    Description:    PixgiX- Ai image Generator HTML Template
     Version:        1.0.0
 
 ============================================================== */
@@ -14,33 +14,33 @@
 
     01. Css Variables
     02. Font Size css
-    03. Common Typography Css 
-    04. reset css 
+    03. Common Typography Css
+    04. reset css
     05. Banner CSS
     06. About Css
     07. Feature Css
     08. Portfolio Css
     09. Text-slide css
-    10. Pricing CSS 
-    11. Testimonials CSS 
-    12. Call-to-action CSS 
-    13. Blog CSS 
-    14. Team CSS 
+    10. Pricing CSS
+    11. Testimonials CSS
+    12. Call-to-action CSS
+    13. Blog CSS
+    14. Team CSS
     15. Contact CSS
-    16. Error CSS 
-    17. Login CSS 
-    18. Generator CSS 
-    19. Cursor-effect CSS 
+    16. Error CSS
+    17. Login CSS
+    18. Generator CSS
+    19. Cursor-effect CSS
     20. Preloader Css
-    21. Scroll back to top Css  
+    21. Scroll back to top Css
     22. navbar css
     23. footer css
-    24. breadcrumb css 
-    25. Preloader Css 
+    24. breadcrumb css
+    25. Preloader Css
     26. Scroll back to top Css
     27. navbar css
     28. footer css
-    29. breadcrumb css 
+    29. breadcrumb css
 
 ========================================*/
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap");
@@ -62,7 +62,7 @@
   /* Font Family */
   --body-font: "ModamPro", serif;
   --title-font: "ModamPro", serif;
-  /* ================== 
+  /* ==================
     Theme Color
    =================== */
   /* Gradient Color */
@@ -3769,8 +3769,8 @@
   content: "•";
 }
 
-/* ================================= 
-  Common Typography Css 
+/* =================================
+  Common Typography Css
 =================================== */
 * {
   margin: 0;
@@ -4130,7 +4130,7 @@ button:focus {
 }
 
 /* ============================
-    reset css 
+    reset css
 =============================== */
 *,
 *::before,
@@ -5694,7 +5694,7 @@ label {
 }
 
 /* ===========================
-   Banner CSS 
+   Banner CSS
 ============================= */
 .banner-section {
   min-height: 100vh;
@@ -6387,7 +6387,7 @@ label {
     }
 
     p {
-      font-size: 18px; 
+      font-size: 18px;
       padding: 1.5625rem 0 2.5rem;
       max-width: 800px;
       margin: 0 auto;
@@ -6470,7 +6470,7 @@ label {
 
 
 /* ===========================
-   About CSS 
+   About CSS
 ============================= */
 .about-section .section-title {
   position: relative;
@@ -6856,7 +6856,7 @@ label {
 }
 
 /* ===========================
-   Feature CSS 
+   Feature CSS
 ============================= */
 .feature-section .col-xl-3 {
   -webkit-transition: all 0.4s;
@@ -7171,7 +7171,7 @@ label {
 }
 
 /* ===========================
-   Portfolio CSS 
+   Portfolio CSS
 ============================= */
 .portfolio-nav {
   position: relative;
@@ -7468,7 +7468,7 @@ label {
 
       i {
         margin-bottom: -7px;
-        transition: all .4s; 
+        transition: all .4s;
         &::before {
           transform: rotate(45deg);
         }
@@ -7481,7 +7481,7 @@ label {
 
 
 /* ===========================
-   Text-slide CSS 
+   Text-slide CSS
 ============================= */
 .slide-text {
   font-size: 6.25rem;
@@ -7529,7 +7529,7 @@ label {
 }
 
 /* ===========================
-   Working-process CSS 
+   Working-process CSS
 ============================= */
 .working-process-section__content {
   display: -ms-grid;
@@ -7972,7 +7972,7 @@ label {
 }
 
 /* ===========================
-   Pricing CSS 
+   Pricing CSS
 ============================= */
 .pricing-section__item {
   border-radius: 10px;
@@ -8428,7 +8428,7 @@ label {
 }
 
 /* ===========================
-   Testimonials CSS 
+   Testimonials CSS
 ============================= */
 .testimonials-slider__item {
   display: -webkit-box;
@@ -8644,7 +8644,7 @@ label {
 }
 
 /* ===========================
-   Call-to-action CSS 
+   Call-to-action CSS
 ============================= */
 .call-to-action-section {
   position: relative;
@@ -8693,7 +8693,7 @@ label {
 }
 
 /* ===========================
-   Blog CSS 
+   Blog CSS
 ============================= */
 @media screen and (max-width: 991px) {
   .blog-grid-item {
@@ -9661,7 +9661,7 @@ label {
 }
 
 /* ===========================
-   Team CSS 
+   Team CSS
 ============================= */
 .team-item {
   position: relative;
@@ -9820,7 +9820,7 @@ label {
 }
 
 /* ===========================
-   Contact CSS 
+   Contact CSS
 ============================= */
 .contact-info-item {
   background: hsl(var(--white));
@@ -10052,7 +10052,7 @@ label {
 }
 
 /* ===========================
-   Error CSS 
+   Error CSS
 ============================= */
 .error-section {
   position: relative;
@@ -10123,7 +10123,7 @@ label {
 }
 
 /* ===========================
-   Login CSS 
+   Login CSS
 ============================= */
 .login-section {
   position: relative;
@@ -10372,7 +10372,7 @@ label {
 }
 
 /* ===========================
-   Generator CSS 
+   Generator CSS
 ============================= */
 .generator__item {
   border-radius: 10px;
@@ -10512,7 +10512,7 @@ label {
 }
 
 /* ===========================
-   Cursor-effect CSS 
+   Cursor-effect CSS
 ============================= */
 .cursor,
 .cursor-trail {
@@ -10547,8 +10547,8 @@ label {
   background-color: hsl(var(--white)/0.3);
 }
 
-/* ================================= 
-    Preloader Css 
+/* =================================
+    Preloader Css
 =================================== */
 #preloader {
   position: fixed;
@@ -10729,8 +10729,8 @@ label {
   }
 }
 
-/* ================================= 
-    Scroll back to top Css 
+/* =================================
+    Scroll back to top Css
 =================================== */
 .progress-wrap {
   position: fixed;
@@ -12621,7 +12621,7 @@ label {
 
 
 /* ===========================
-   Prompt CSS 
+   Prompt CSS
 ============================= */
 .sort-by {
   .dropdown-menu {
@@ -12754,7 +12754,7 @@ label {
 
 
 /* ===========================
-   Collection CSS 
+   Collection CSS
 ============================= */
 .collection-item {
   position: relative;

@@ -8,18 +8,9 @@
             direction: rtl;
         }
 
-        .team-slider .swiper-slide {
-            height: auto;
-        }
-
         .team-item {
             height: 100%;
         }
-
-        .team-slider .swiper-slide {
-            width: auto !important;
-        }
-
 
         .team-section .swiper-pagination-bullet {
             opacity: .6
@@ -43,19 +34,18 @@
         .team-section .swiper-button-next:after {
             font-size: 16px
         }
-
         .workshop-slider {
             direction: rtl;
         }
 
-        .workshop-slider .swiper-slide {
-            height: auto;
-        }
+        /*.workshop-slider .swiper-slide {*/
+        /*    height: auto;*/
+        /*}*/
 
-        .workshop-slider .swiper-slide {
-            width: unset !important;
-            box-sizing: border-box;
-        }
+        /*.workshop-slider .swiper-slide {*/
+        /*    width: unset !important;*/
+        /*    box-sizing: border-box;*/
+        /*}*/
 
 
         .workshop-slider .swiper-slide > * {
@@ -81,7 +71,7 @@
 @endpush
 
 @section('content')
-
+    {{--banner section--}}
     <section class="banner-section ">
         <div class="container">
             <div class="row row-gap-5">
@@ -101,10 +91,10 @@
                             <div class="community-content">
                                 <div class="img">
                                     <figure class="image-effect">
-                                        <img src="assets/images/community/1.png" alt="community images">
+                                        <img src="{{asset('site/assets/images/community/1.png')}}" alt="community images">
                                     </figure>
                                     <figure class="image-effect">
-                                        <img src="assets/images/community/2.png" alt="community images">
+                                        <img src="{{asset('site/assets/images/community/2.png')}}" alt="community images">
                                     </figure>
                                     <div class="numbers">
                                         +۹M
@@ -122,13 +112,13 @@
                         <div class="shape-2"></div>
                         <div class="banner-section__img">
                             <figure class="image-effect right-reveal">
-                                <img src="assets/images/banner/b1.jpg" alt="banner images" class="img-fluid w-100">
+                                <img src="{{asset('site/assets/images/banner/b1.jpg')}}" alt="banner images" class="img-fluid w-100">
                             </figure>
                             <figure class="image-effect left-reveal">
-                                <img src="assets/images/banner/b2.jpg" alt="banner images" class="img-fluid w-100">
+                                <img src="{{asset('site/assets/images/banner/b2.jpg')}}" alt="banner images" class="img-fluid w-100">
                             </figure>
                             <figure class="image-effect top-reveal">
-                                <img src="assets/images/banner/b3.jpg" alt="banner images" class="img-fluid w-100">
+                                <img src="{{asset('site/assets/images/banner/b3.jpg')}}" alt="banner images" class="img-fluid w-100">
                             </figure>
                         </div>
                     </div>
@@ -136,6 +126,8 @@
             </div>
         </div>
     </section>
+
+    {{--workshop section--}}
     <section>
         <div class="container section-two-bg py-120">
             <div class="row justify-content-center">
@@ -148,12 +140,12 @@
             </div>
 
             <div class="row row-gap-4 mt-60">
-                <div class="col-xl-12 col-lg-12 main-content">
+                <div class="col-lg-12">
                     <div class="workshop-slider swiper">
                         <div class="swiper-wrapper">
                             @foreach($workshops as $workshop)
                             <div class="swiper-slide">
-                                <div class="content-box top-reveal">
+                                <div class="top-reveal">
                                     <div class="explore-item">
                                         <div class="explore-item-header d-flex align-items-center justify-content-between">
                                             <div class="explore-title">
@@ -201,6 +193,7 @@
             </div>
         </div>
     </section>
+
     <section class="about-section section-two-bg py-120">
         <div class="container">
             <div class="row row-gap-4">
@@ -208,15 +201,15 @@
                     <div class="about-section__img" dir="ltr">
                         <div class="image-one">
                             <figure class="image-effect right-reveal">
-                                <img src="assets/images/about/1.jpg" alt="about images" class="img-fluid w-100">
+                                <img src="{{asset('site/assets/images/about/1.jpg')}}" alt="about images" class="img-fluid w-100">
                             </figure>
                         </div>
                         <div class="image-two d-grid">
                             <figure class="image-effect bottom-reveal">
-                                <img src="assets/images/about/2.jpg" alt="about images" class="img-fluid w-100">
+                                <img src="{{asset('site/assets/images/about/2.jpg')}}" alt="about images" class="img-fluid w-100">
                             </figure>
                             <figure class="image-effect top-reveal">
-                                <img src="assets/images/about/3.jpg" alt="about images" class="img-fluid w-100">
+                                <img src="{{asset('site/assets/images/about/3.jpg')}}" alt="about images" class="img-fluid w-100">
                             </figure>
                         </div>
                     </div>
@@ -242,6 +235,7 @@
             </div>
         </div>
     </section>
+
     <section class="feature-section py-120">
         <div class="container">
             <div class="row justify-content-center">
@@ -437,10 +431,10 @@
                     <div class="generate-image-section__img">
                         <div class="generate-image">
                             <figure class="image-effect right-reveal">
-                                <img src="assets/images/about/g1.jpg" alt="about images" class="img-fluid w-100">
+                                <img src="{{asset('site/assets/images/about/g1.jpg')}}" alt="about images" class="img-fluid w-100">
                             </figure>
                             <figure class="image-effect left-reveal">
-                                <img src="assets/images/about/g2.jpg" alt="about images" class="img-fluid w-100">
+                                <img src="{{asset('site/assets/images/about/g2.jpg')}}" alt="about images" class="img-fluid w-100">
                             </figure>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" id="round-shape" width="295" height="295"
@@ -475,6 +469,7 @@
             </div>
         </div>
     </section>
+
     <section class="portfolio-section section-one-bg py-120">
         <div class="container">
             <div class="row">
@@ -502,73 +497,73 @@
                 <div class="col-lg-12 p-0">
                     <div class="card-grid" id="container">
                         <div class="card-grid-item nr il">
-                            <a class="portfolio-item" href="assets/images/portfolio/1.jpg"
+                            <a class="portfolio-item" href="{{asset('site/assets/images/portfolio/1.jpg')}}"
                                title="The Cleaner by Pixgix">
                                 <figure class="image-effect">
-                                    <img src="assets/images/portfolio/1.jpg" alt="portfolio images"
+                                    <img src="{{asset('site/assets/images/portfolio/1.jpg')}}" alt="portfolio images"
                                          class="img-fluid w-100">
                                 </figure>
                             </a>
                         </div>
                         <div class="card-grid-item ad il">
-                            <a class="portfolio-item" href="assets/images/portfolio/2.jpg"
+                            <a class="portfolio-item" href="{{asset('site/assets/images/portfolio/2.jpg')}}"
                                title="The Cleaner by Pixgix">
                                 <figure class="image-effect">
-                                    <img src="assets/images/portfolio/2.jpg" alt="portfolio images"
+                                    <img src="{{asset('site/assets/images/portfolio/2.jpg')}}" alt="portfolio images"
                                          class="img-fluid w-100">
                                 </figure>
                             </a>
                         </div>
                         <div class="card-grid-item nr">
-                            <a class="portfolio-item" href="assets/images/portfolio/3.jpg"
+                            <a class="portfolio-item" href="{{asset('site/assets/images/portfolio/3.jpg')}}"
                                title="The Cleaner by Pixgix">
                                 <figure class="image-effect">
-                                    <img src="assets/images/portfolio/3.jpg" alt="portfolio images"
+                                    <img src="{{asset('site/assets/images/portfolio/3.jpg')}}" alt="portfolio images"
                                          class="img-fluid w-100">
                                 </figure>
                             </a>
                         </div>
                         <div class="card-grid-item ad">
-                            <a class="portfolio-item" href="assets/images/portfolio/4.jpg"
+                            <a class="portfolio-item" href="{{asset('site/assets/images/portfolio/48.jpg')}}"
                                title="The Cleaner by Pixgix">
                                 <figure class="image-effect">
-                                    <img src="assets/images/portfolio/4.jpg" alt="portfolio images"
+                                    <img src="{{asset('site/assets/images/portfolio/4.jpg')}}" alt="portfolio images"
                                          class="img-fluid w-100">
                                 </figure>
                             </a>
                         </div>
                         <div class="card-grid-item nr ad">
-                            <a class="portfolio-item" href="assets/images/portfolio/5.jpg"
+                            <a class="portfolio-item" href="{{asset('site/assets/images/portfolio/5.jpg')}}"
                                title="The Cleaner by Pixgix">
                                 <figure class="image-effect">
-                                    <img src="assets/images/portfolio/5.jpg" alt="portfolio images"
+                                    <img src="{{asset('site/assets/images/portfolio/5.jpg')}}" alt="portfolio images"
                                          class="img-fluid w-100">
                                 </figure>
                             </a>
                         </div>
                         <div class="card-grid-item ad">
-                            <a class="portfolio-item" href="assets/images/portfolio/6.jpg"
+                            <a class="portfolio-item" href="{{asset('site/assets/images/portfolio/6.jpg')}}"
                                title="The Cleaner by Pixgix">
                                 <figure class="image-effect">
-                                    <img src="assets/images/portfolio/6.jpg" alt="portfolio images"
+                                    <img src="{{asset('site/assets/images/portfolio/6.jpg')}}" alt="portfolio images"
                                          class="img-fluid w-100">
                                 </figure>
                             </a>
                         </div>
                         <div class="card-grid-item il nr">
-                            <a class="portfolio-item" href="assets/images/portfolio/7.jpg"
+                            <a class="portfolio-item" href="{{asset('site/assets/images/portfolio/7.jpg')}}"
                                title="The Cleaner by Pixgix">
                                 <figure class="image-effect">
-                                    <img src="assets/images/portfolio/7.jpg" alt="portfolio images"
+                                    <img src="{{asset('site/assets/images/portfolio/7.jpg')}}" alt="portfolio images"
                                          class="img-fluid w-100">
                                 </figure>
                             </a>
                         </div>
                         <div class="card-grid-item il">
-                            <a class="portfolio-item" href="assets/images/portfolio/8.jpg"
+                            <a class="portfolio-item" href="{{asset('site/assets/images/portfolio/8.jpg')}}"
                                title="The Cleaner by Pixgix">
                                 <figure class="image-effect">
-                                    <img src="assets/images/portfolio/8.jpg" alt="portfolio images"
+                                    <img src="{{asset('site/assets/images/portfolio/8.jpg')}}" alt="portfolio images"
                                          class="img-fluid w-100">
                                 </figure>
                             </a>
@@ -578,6 +573,7 @@
             </div>
         </div>
     </section>
+
     <div class="section-two-bg py-60 @@services-text-slide">
         <div class="text-slide swiper">
             <div class="swiper-wrapper slide-transition">
@@ -588,7 +584,7 @@
                 </div>
                 <div class="swiper-slide inner-slide-element">
                     <div class="slide-text">
-                        <img src="assets/images/shape/star.svg" alt="icon">
+                        <img src="{{asset('site/assets/images/shape/star.svg')}}" alt="icon">
                     </div>
                 </div>
                 <div class="swiper-slide inner-slide-element">
@@ -598,7 +594,7 @@
                 </div>
                 <div class="swiper-slide inner-slide-element">
                     <div class="slide-text">
-                        <img src="assets/images/shape/star.svg" alt="icon">
+                        <img src="{{asset('site/assets/images/shape/star.svg')}}" alt="icon">
                     </div>
                 </div>
                 <div class="swiper-slide inner-slide-element">
@@ -608,7 +604,7 @@
                 </div>
                 <div class="swiper-slide inner-slide-element">
                     <div class="slide-text">
-                        <img src="assets/images/shape/star.svg" alt="icon">
+                        <img src="{{asset('site/assets/images/shape/star.svg')}}" alt="icon">
                     </div>
                 </div>
                 <div class="swiper-slide inner-slide-element">
@@ -618,12 +614,13 @@
                 </div>
                 <div class="swiper-slide inner-slide-element">
                     <div class="slide-text">
-                        <img src="assets/images/shape/star.svg" alt="icon">
+                        <img src="{{asset('site/assets/images/shape/star.svg')}}" alt="icon">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <section class="working-process-section section-one-bg py-120">
         <div class="container">
             <div class="row row-gap-5">
@@ -752,68 +749,70 @@
             </div>
         </div>
     </section>
-    <section class="pricing-section section-two-bg py-120">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title text-center">
-                        <span class="sub-title top-reveal">قیمت گذاری ها</span>
-                        <h2 class="top-reveal">طرح قیمت گذاری ایده آل را انتخاب کنید</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row row-gap-4 mt-60 justify-content-center">
-                <div class="col-lg-4 col-md-6 top-reveal">
-                    <div class="pricing-section__item">
-                        <div class="header">
-                            <span>پلن معمولی</span>
-                            <h2>رایگان</h2>
-                        </div>
-                        <ul class="pricing-list">
-                            <li>تولید ۵۰ تصویر توسط هوش مصنوعی در ماه</li>
-                            <li>وضوح استاندارد (1080p)</li>
-                            <li>گزینه های سفارشی سازی اولیه</li>
-                            <li>حقوق استفاده تجاری</li>
-                            <li>پشتیبانی ایمیل</li>
-                        </ul>
-                        <a href="login.html" class="btn btn--border">خریداری کنید</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 top-reveal">
-                    <div class="pricing-section__item">
-                        <div class="header">
-                            <span>پلن حرفه ای</span>
-                            <h2>۵۹۰تومان<sub>/ماهیانه</sub></h2>
-                        </div>
-                        <ul class="pricing-list">
-                            <li>تولید ۲۰۰ تصویر توسط هوش مصنوعی در ماه</li>
-                            <li>وضوح بالا (4K)</li>
-                            <li>گزینه های سفارشی سازی پیشرفته</li>
-                            <li>حقوق استفاده تجاری</li>
-                            <li>پشتیبانی اولویت دار</li>
-                        </ul>
-                        <a href="login.html" class="btn btn--border">خریداری کنید</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 top-reveal">
-                    <div class="pricing-section__item">
-                        <div class="header">
-                            <span>پلن سازمانی</span>
-                            <h2>۹۹۰تومان<sub>/ماهیانه</sub></h2>
-                        </div>
-                        <ul class="pricing-list">
-                            <li>تولید تصویر نامحدود توسط هوش مصنوعی</li>
-                            <li>وضوح تصویر اولترا اچ‌دی (8K)</li>
-                            <li>آموزش مدل AI سفارشی</li>
-                            <li>مدیر حساب اختصاصی</li>
-                            <li>دسترسی و ادغام API</li>
-                        </ul>
-                        <a href="login.html" class="btn btn--border">خریداری کنید</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+{{--    <section class="pricing-section section-two-bg py-120">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-12">--}}
+{{--                    <div class="section-title text-center">--}}
+{{--                        <span class="sub-title top-reveal">قیمت گذاری ها</span>--}}
+{{--                        <h2 class="top-reveal">طرح قیمت گذاری ایده آل را انتخاب کنید</h2>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="row row-gap-4 mt-60 justify-content-center">--}}
+{{--                <div class="col-lg-4 col-md-6 top-reveal">--}}
+{{--                    <div class="pricing-section__item">--}}
+{{--                        <div class="header">--}}
+{{--                            <span>پلن معمولی</span>--}}
+{{--                            <h2>رایگان</h2>--}}
+{{--                        </div>--}}
+{{--                        <ul class="pricing-list">--}}
+{{--                            <li>تولید ۵۰ تصویر توسط هوش مصنوعی در ماه</li>--}}
+{{--                            <li>وضوح استاندارد (1080p)</li>--}}
+{{--                            <li>گزینه های سفارشی سازی اولیه</li>--}}
+{{--                            <li>حقوق استفاده تجاری</li>--}}
+{{--                            <li>پشتیبانی ایمیل</li>--}}
+{{--                        </ul>--}}
+{{--                        <a href="login.html" class="btn btn--border">خریداری کنید</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-4 col-md-6 top-reveal">--}}
+{{--                    <div class="pricing-section__item">--}}
+{{--                        <div class="header">--}}
+{{--                            <span>پلن حرفه ای</span>--}}
+{{--                            <h2>۵۹۰تومان<sub>/ماهیانه</sub></h2>--}}
+{{--                        </div>--}}
+{{--                        <ul class="pricing-list">--}}
+{{--                            <li>تولید ۲۰۰ تصویر توسط هوش مصنوعی در ماه</li>--}}
+{{--                            <li>وضوح بالا (4K)</li>--}}
+{{--                            <li>گزینه های سفارشی سازی پیشرفته</li>--}}
+{{--                            <li>حقوق استفاده تجاری</li>--}}
+{{--                            <li>پشتیبانی اولویت دار</li>--}}
+{{--                        </ul>--}}
+{{--                        <a href="login.html" class="btn btn--border">خریداری کنید</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-4 col-md-6 top-reveal">--}}
+{{--                    <div class="pricing-section__item">--}}
+{{--                        <div class="header">--}}
+{{--                            <span>پلن سازمانی</span>--}}
+{{--                            <h2>۹۹۰تومان<sub>/ماهیانه</sub></h2>--}}
+{{--                        </div>--}}
+{{--                        <ul class="pricing-list">--}}
+{{--                            <li>تولید تصویر نامحدود توسط هوش مصنوعی</li>--}}
+{{--                            <li>وضوح تصویر اولترا اچ‌دی (8K)</li>--}}
+{{--                            <li>آموزش مدل AI سفارشی</li>--}}
+{{--                            <li>مدیر حساب اختصاصی</li>--}}
+{{--                            <li>دسترسی و ادغام API</li>--}}
+{{--                        </ul>--}}
+{{--                        <a href="login.html" class="btn btn--border">خریداری کنید</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+
     <section class="testimonials-section section-one-bg py-120">
         <div class="container">
             <div class="row">
@@ -842,7 +841,7 @@
 
                                         <div class="user">
                                             <div class="img">
-                                                <img src="assets/images/testimonial/1.jpg" alt="user">
+                                                <img src="{{asset('site/assets/images/testimonial/1.jpg')}}" alt="user">
                                             </div>
                                             <div class="text">
                                                 <h4>امیرارسلان رهنما</h4>
@@ -873,7 +872,7 @@
 
                                         <div class="user">
                                             <div class="img">
-                                                <img src="assets/images/testimonial/2.jpg" alt="user">
+                                                <img src="{{asset('site/assets/images/testimonial/2.jpg')}}" alt="user">
                                             </div>
                                             <div class="text">
                                                 <h4>ایلیا میرزایی</h4>
@@ -904,7 +903,7 @@
 
                                         <div class="user">
                                             <div class="img">
-                                                <img src="assets/images/testimonial/1.jpg" alt="user">
+                                                <img src="{{asset('site/assets/images/testimonial/1.jpg')}}" alt="user">
                                             </div>
                                             <div class="text">
                                                 <h4>امیرارسلان رهنما</h4>
@@ -935,7 +934,7 @@
 
                                         <div class="user">
                                             <div class="img">
-                                                <img src="assets/images/testimonial/2.jpg" alt="user">
+                                                <img src="{{asset('site/assets/images/testimonial/2.jpg')}}" alt="user">
                                             </div>
                                             <div class="text">
                                                 <h4>ایلیا میرزایی</h4>
@@ -959,6 +958,7 @@
             </div>
         </div>
     </section>
+
     <section class="call-to-action-section section-base-bg py-120">
         <div class="container">
             <div class="row row-gap-5 justify-content-between">
@@ -977,11 +977,11 @@
                 <div class="col-lg-6 align-self-center">
                     <div class="call-to-action-section__img" dir="ltr">
                         <figure class="image-effect right-reveal">
-                            <img src="assets/images/call-to-action/1.jpg" alt="action images"
+                            <img src="{{asset('site/assets/images/call-to-action/1.jpg')}}" alt="action images"
                                  class="img-fluid w-100">
                         </figure>
                         <figure class="image-effect left-reveal">
-                            <img src="assets/images/call-to-action/2.jpg" alt="action images"
+                            <img src="{{asset('site/assets/images/call-to-action/2.jpg')}}" alt="action images"
                                  class="img-fluid w-100">
                         </figure>
                     </div>
@@ -989,6 +989,7 @@
             </div>
         </div>
     </section>
+
     <section class="blog-section section-one-bg py-120">
         <div class="container">
             <div class="row row-gap-4 justify-content-center">
@@ -1011,126 +1012,33 @@
                 <div class="col-lg-12">
                     <div class="blog-slider swiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="blog-grid-item">
-                                    <div class="blog-date">
-                                        <div class="bar-icon"></div>
-                                        ۲۱ تیر ۱۴۰۴
-                                    </div>
-                                    <a href="blog-details.html">
-                                        <figure class="image-effect">
-                                            <img src="assets/images/blog/1.jpg" alt="blog images"
-                                                 class="img-fluid w-100">
-                                        </figure>
-                                    </a>
-                                    <div class="post-type">
-                                        مدرن
-                                        <div class="bar-icon2"></div>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h4>
-                                            <a href="blog-details.html">۵ روند برتر تولید تصویر هوش مصنوعی که باید در
-                                                سال ۲۰۲۵ به آنها توجه کرد</a>
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="blog-grid-item">
-                                    <div class="blog-date">
-                                        <div class="bar-icon"></div>
-                                        ۹ خرداد ۱۴۰۴
-                                    </div>
-                                    <a href="blog-details.html">
-                                        <figure class="image-effect">
-                                            <img src="assets/images/blog/2.jpg" alt="blog images"
-                                                 class="img-fluid w-100">
-                                        </figure>
-                                    </a>
-                                    <div class="post-type">
-                                        کسب و کا
-                                        <div class="bar-icon2"></div>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h4>
-                                            <a href="blog-details.html">راهنمای گام به گام برای ایجاد آثار هنری تولید
-                                                شده توسط هوش مصنوعی</a>
-                                        </h4>
+                            @foreach($emploees as $emploee)
+                                <div class="swiper-slide">
+                                    <div class="blog-grid-item">
+                                        <div class="blog-date">
+                                            <div class="bar-icon"></div>
+                                            ۲۱ تیر ۱۴۰۴
+                                        </div>
+                                        <a href="blog-details.html">
+                                            <figure class="image-effect">
+                                                <img src="{{ asset($emploee->image) }}" alt="blog images"
+                                                     class="img-fluid w-100">
+                                            </figure>
+                                        </a>
+                                        <div class="post-type">
+                                            مدرن
+                                            <div class="bar-icon2"></div>
+                                        </div>
+                                        <div class="blog-content">
+                                            <h4>
+                                                <a href="blog-details.html">۵ روند برتر تولید تصویر هوش مصنوعی که باید در
+                                                    سال ۲۰۲۵ به آنها توجه کرد</a>
+                                            </h4>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="blog-grid-item">
-                                    <div class="blog-date">
-                                        <div class="bar-icon"></div>
-                                        ۲۱ تیر ۱۴۰۴
-                                    </div>
-                                    <a href="blog-details.html">
-                                        <figure class="image-effect">
-                                            <img src="assets/images/blog/3.jpg" alt="blog images"
-                                                 class="img-fluid w-100">
-                                        </figure>
-                                    </a>
-                                    <div class="post-type">
-                                        خلاقانه
-                                        <div class="bar-icon2"></div>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h4>
-                                            <a href="blog-details.html">چگونه کسب‌وکارها می‌توانند از تصاویر تولید شده
-                                                توسط هوش مصنوعی بهره ببرند</a>
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="blog-grid-item">
-                                    <div class="blog-date">
-                                        <div class="bar-icon"></div>
-                                        ۲۱ تیر ۱۴۰۴
-                                    </div>
-                                    <a href="blog-details.html">
-                                        <figure class="image-effect">
-                                            <img src="assets/images/blog/1.jpg" alt="blog images"
-                                                 class="img-fluid w-100">
-                                        </figure>
-                                    </a>
-                                    <div class="post-type">
-                                        مدرن
-                                        <div class="bar-icon2"></div>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h4>
-                                            <a href="blog-details.html">۵ روند برتر تولید تصویر هوش مصنوعی که باید در
-                                                سال ۲۰۲۵ به آنها توجه کرد</a>
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="blog-grid-item">
-                                    <div class="blog-date">
-                                        <div class="bar-icon"></div>
-                                        ۹ خرداد ۱۴۰۴
-                                    </div>
-                                    <a href="blog-details.html">
-                                        <figure class="image-effect">
-                                            <img src="assets/images/blog/2.jpg" alt="blog images"
-                                                 class="img-fluid w-100">
-                                        </figure>
-                                    </a>
-                                    <div class="post-type">
-                                        کسب و کا
-                                        <div class="bar-icon2"></div>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h4>
-                                            <a href="blog-details.html">راهنمای گام به گام برای ایجاد آثار هنری تولید
-                                                شده توسط هوش مصنوعی</a>
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
+
+                            @endforeach
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -1138,6 +1046,7 @@
             </div>
         </div>
     </section>
+
     <section class="company-section section-two-bg py-100">
         <div class="container">
             <div class="row mb-60">
@@ -1189,7 +1098,7 @@
                         <div class="swiper-wrapper">
                             @foreach($emploees as $emploee)
                             <div class="swiper-slide">
-                                <div class="team-item top-reveal">
+                                <div class="team-item">
                                     <figure class="image-effect">
                                         <img src="{{ asset($emploee->image) }}" alt="{{ $emploee->fullname }}" class="img-fluid w-100" loading="lazy">
                                     </figure>
@@ -1217,103 +1126,103 @@
 @endsection
 
 @push('page_scripts')
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const el = document.querySelector('.team-slider');
-            if (!el) return;
+{{--    <script>--}}
+{{--        document.addEventListener('DOMContentLoaded', function () {--}}
+{{--            const el = document.querySelector('.team-slider');--}}
+{{--            if (!el) return;--}}
 
-            const teamSwiper = new Swiper(el, {
-                speed: 500,
-                spaceBetween: 20,
-                loop: true,
-                grabCursor: true,
-                rtlTranslate: true,
+{{--            const teamSwiper = new Swiper(el, {--}}
+{{--                speed: 500,--}}
+{{--                spaceBetween: 20,--}}
+{{--                loop: true,--}}
+{{--                grabCursor: true,--}}
+{{--                rtlTranslate: true,--}}
 
-                // 🔧 مهم برای وقتی اسلایدر داخل تب/اکاردئون/بخش مخفی است
-                observer: true,
-                observeParents: true,
-                observeSlideChildren: true,
-                // وقتی تعداد اسلایدها کم است، از خراب شدن چیدمان جلوگیری می‌کند
-                watchOverflow: true,
+{{--                // 🔧 مهم برای وقتی اسلایدر داخل تب/اکاردئون/بخش مخفی است--}}
+{{--                observer: true,--}}
+{{--                observeParents: true,--}}
+{{--                observeSlideChildren: true,--}}
+{{--                // وقتی تعداد اسلایدها کم است، از خراب شدن چیدمان جلوگیری می‌کند--}}
+{{--                watchOverflow: true,--}}
 
-                pagination: {
-                    el: '.team-section .swiper-pagination',
-                    clickable: true
-                },
-                navigation: {
-                    nextEl: '.team-section .swiper-button-next',
-                    prevEl: '.team-section .swiper-button-prev',
-                },
-                keyboard: {enabled: true},
+{{--                pagination: {--}}
+{{--                    el: '.team-section .swiper-pagination',--}}
+{{--                    clickable: true--}}
+{{--                },--}}
+{{--                navigation: {--}}
+{{--                    nextEl: '.team-section .swiper-button-next',--}}
+{{--                    prevEl: '.team-section .swiper-button-prev',--}}
+{{--                },--}}
+{{--                keyboard: {enabled: true},--}}
 
-                // اتوپلی رو فعلاً خاموش می‌گذاریم تا برای دیباگ "وایسته"
-                autoplay: {delay: 3500, disableOnInteraction: false},
+{{--                // اتوپلی رو فعلاً خاموش می‌گذاریم تا برای دیباگ "وایسته"--}}
+{{--                autoplay: {delay: 3500, disableOnInteraction: false},--}}
 
-                slidesPerView: 1,
-                breakpoints: {
-                    576: {slidesPerView: 2, spaceBetween: 20},
-                    992: {slidesPerView: 3, spaceBetween: 24},
-                    1200: {slidesPerView: 4, spaceBetween: 28}
-                }
-            });
+{{--                slidesPerView: 1,--}}
+{{--                breakpoints: {--}}
+{{--                    576: {slidesPerView: 2, spaceBetween: 20},--}}
+{{--                    992: {slidesPerView: 3, spaceBetween: 24},--}}
+{{--                    1200: {slidesPerView: 4, spaceBetween: 28}--}}
+{{--                }--}}
+{{--            });--}}
 
-            // اگر این سکشن داخل تب/آف‌کانواس/مدال باز می‌شود، حتماً آپدیت بزن:
-            // مثال با بوت‌استرپ تب:
-            document.querySelectorAll('[data-bs-toggle="tab"]').forEach(t =>
-                t.addEventListener('shown.bs.tab', () => teamSwiper.update())
-            );
+{{--            // اگر این سکشن داخل تب/آف‌کانواس/مدال باز می‌شود، حتماً آپدیت بزن:--}}
+{{--            // مثال با بوت‌استرپ تب:--}}
+{{--            document.querySelectorAll('[data-bs-toggle="tab"]').forEach(t =>--}}
+{{--                t.addEventListener('shown.bs.tab', () => teamSwiper.update())--}}
+{{--            );--}}
 
-            // دیباگ کنسول
-            window.teamSwiper = teamSwiper;
-            // console tips:
-            // teamSwiper.update(); teamSwiper.slideNext();
-        });
-    </script>
+{{--            // دیباگ کنسول--}}
+{{--            window.teamSwiper = teamSwiper;--}}
+{{--            // console tips:--}}
+{{--            // teamSwiper.update(); teamSwiper.slideNext();--}}
+{{--        });--}}
+{{--    </script>--}}
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const slider = document.querySelector('.workshop-slider');
-            if (!slider) return;
+{{--    <script>--}}
+{{--        document.addEventListener('DOMContentLoaded', function () {--}}
+{{--            const slider = document.querySelector('.workshop-slider');--}}
+{{--            if (!slider) return;--}}
 
-            const swiper = new Swiper(slider, {
-                speed: 500,
-                spaceBetween: 20,
-                grabCursor: true,
+{{--            const swiper = new Swiper(slider, {--}}
+{{--                speed: 500,--}}
+{{--                spaceBetween: 20,--}}
+{{--                grabCursor: true,--}}
 
-                // ❌ بدون لوپ، بدون ری‌وایند
-                loop: false,
-                rewind: false,
-                watchOverflow: true,
+{{--                // ❌ بدون لوپ، بدون ری‌وایند--}}
+{{--                loop: false,--}}
+{{--                rewind: false,--}}
+{{--                watchOverflow: true,--}}
 
-                // اگر داخل تب/آکاردئون است
-                observer: true,
-                observeParents: true,
-                observeSlideChildren: true,
-                updateOnWindowResize: true,
+{{--                // اگر داخل تب/آکاردئون است--}}
+{{--                observer: true,--}}
+{{--                observeParents: true,--}}
+{{--                observeSlideChildren: true,--}}
+{{--                updateOnWindowResize: true,--}}
 
-                // اگر قبلاً autoplay داشتی، پاک کن:
-                // autoplay: undefined,
+{{--                // اگر قبلاً autoplay داشتی، پاک کن:--}}
+{{--                // autoplay: undefined,--}}
 
-                pagination: {
-                    el: slider.querySelector('.swiper-pagination'),
-                    clickable: true
-                },
-                navigation: {
-                    nextEl: slider.querySelector('.swiper-button-next'),
-                    prevEl: slider.querySelector('.swiper-button-prev')
-                },
-                keyboard: {enabled: true},
+{{--                pagination: {--}}
+{{--                    el: slider.querySelector('.swiper-pagination'),--}}
+{{--                    clickable: true--}}
+{{--                },--}}
+{{--                navigation: {--}}
+{{--                    nextEl: slider.querySelector('.swiper-button-next'),--}}
+{{--                    prevEl: slider.querySelector('.swiper-button-prev')--}}
+{{--                },--}}
+{{--                keyboard: {enabled: true},--}}
 
-                slidesPerView: 1,
-                slidesPerGroup: 1,
-                breakpoints: {
-                    576: {slidesPerView: 2, spaceBetween: 20, slidesPerGroup: 1},
-                    992: {slidesPerView: 3, spaceBetween: 24, slidesPerGroup: 1},
-                    1200: {slidesPerView: 3, spaceBetween: 28, slidesPerGroup: 1}
-                }
-            });
+{{--                slidesPerView: 3,--}}
+{{--                slidesPerGroup: 1,--}}
+{{--                breakpoints: {--}}
+{{--                    576: {slidesPerView: 2, spaceBetween: 20, slidesPerGroup: 1},--}}
+{{--                    992: {slidesPerView: 3, spaceBetween: 24, slidesPerGroup: 1},--}}
+{{--                    1200: {slidesPerView: 3, spaceBetween: 28, slidesPerGroup: 1}--}}
+{{--                }--}}
+{{--            });--}}
 
-            window.workshopSwiper = swiper;
-        });
-    </script>
+{{--            window.workshopSwiper = swiper;--}}
+{{--        });--}}
+{{--    </script>--}}
 @endpush

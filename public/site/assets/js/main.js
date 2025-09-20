@@ -2,15 +2,15 @@
     [Master Scripts]
 
     Theme Name:     Pixgix
-    Theme URL:      
-    Description:    PixgiX- Ai image Generator HTML Template 
+    Theme URL:
+    Description:    PixgiX- Ai image Generator HTML Template
     Version:        1.0.0
 
 ============================================================== */
 /*
 ========================================
 *********** TABLE OF CONTENTS **********
- 
+
   1. Navbar Shrink JS
   2. Navbar Links Active JS
   3. Banner Two Trigger JS
@@ -31,7 +31,7 @@
   18. Portfolio Grid JS
   19. Background Image JS
   20. Preloader JS
- 
+
 ========================================*/
 
 'use strict';
@@ -334,9 +334,69 @@
     });
   }
 
-  /* ========================================
-    we do slide Js
-  ======================================== */
+    if ($('.workshop-slider').length > 0) {
+        const workshopSwiper = new Swiper('.workshop-slider', {
+            slidesPerView: 3,
+            spaceBetween: 24,
+            speed: 700,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                0: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 2 },
+                1200: { slidesPerView: 3 },
+            },
+        });
+    }
+
+    if (document.querySelector('.team-slider')) {
+        const el = document.querySelector('.team-slider');
+        const count = el.querySelectorAll('.swiper-slide').length;
+
+        new Swiper(el, {
+            speed: 700,
+            spaceBetween: 24,
+            autoplay: { delay: 4000, disableOnInteraction: false },
+            loop: count > 4,          // با 12 تا بهتره true بشه
+            rewind: count <= 4,
+            watchOverflow: true,
+
+            pagination: {             // اسکوپ‌دار، نه ".swiper-pagination" عمومی
+                el: '.team-slider .swiper-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.team-slider .swiper-button-next',
+                prevEl: '.team-slider .swiper-button-prev',
+            },
+
+            slidesPerView: 1,
+            breakpoints: {
+                768:  { slidesPerView: 2 },
+                1024: { slidesPerView: 2 },
+                1200: { slidesPerView: 3 },
+                1400: { slidesPerView: 4 }, // اگر خواستی 4تایی روی خیلی بزرگ
+            },
+
+            observer: true,
+            observeParents: true,
+            observeSlideChildren: true,
+            updateOnWindowResize: true,
+        });
+    }
+
+
+
+    /* ========================================
+      we do slide Js
+    ======================================== */
   if ($('.we-do-slide').length > 0) {
     const blogSwiper = new Swiper('.we-do-slide', {
       slidesPerView: 3,
@@ -441,7 +501,7 @@
         delay: 0,
         disableOnInteraction: false,
         reverseDirection: true,
-      },  
+      },
     });
   }
   if ($('.banner-four-slide').length > 0) {
@@ -455,8 +515,8 @@
       autoplay: {
         delay: 0,
         disableOnInteraction: false,
-        reverseDirection: true,  
-      }, 
+        reverseDirection: true,
+      },
     });
   }
 
@@ -499,7 +559,7 @@
       autoplay: {
         delay: 3500,
         disableOnInteraction: false,
-      }, 
+      },
       pagination: false,
       navigation: {
         nextEl: ".swiper--next",
@@ -645,7 +705,7 @@
     const slidesCount = $('.product-image').length;
 
     const detailsMain = new Swiper(".details-main", {
-      loop: slidesCount >= 8,  
+      loop: slidesCount >= 8,
       spaceBetween: 10,
       slidesPerView: 4,
       freeMode: true,
@@ -653,7 +713,7 @@
     });
 
     const detailsList = new Swiper(".details-list", {
-      loop: slidesCount >= 3,   
+      loop: slidesCount >= 3,
       spaceBetween: 10,
       navigation: {
         nextEl: ".swiper-button-next",
