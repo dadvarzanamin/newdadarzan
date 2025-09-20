@@ -1,6 +1,6 @@
 @extends('site.layouts.base')
 
-@section('title', 'خانه')
+@section('title', 'موسسه حقوقی دادورزان امین')
 
 @push('page_styles')
     <style>
@@ -82,7 +82,6 @@
 
 @section('content')
 
-    {{--    Banner          --}}
     <section class="banner-section ">
         <div class="container">
             <div class="row row-gap-5">
@@ -137,9 +136,6 @@
             </div>
         </div>
     </section>
-    {{--    End Banner      --}}
-
-    {{--    WorkShop section        --}}
     <section>
         <div class="container section-two-bg py-120">
             <div class="row justify-content-center">
@@ -153,18 +149,15 @@
 
             <div class="row row-gap-4 mt-60">
                 <div class="col-xl-12 col-lg-12 main-content">
-                    <!-- اسلایدر ورکشاپ -->
                     <div class="workshop-slider swiper">
                         <div class="swiper-wrapper">
-
-                            <!-- فقط یک کارت نمونه (برای افزودن، همین را کپی کن) -->
+                            @foreach($workshops as $workshop)
                             <div class="swiper-slide">
                                 <div class="content-box top-reveal">
                                     <div class="explore-item">
-                                        <div
-                                            class="explore-item-header d-flex align-items-center justify-content-between">
+                                        <div class="explore-item-header d-flex align-items-center justify-content-between">
                                             <div class="explore-title">
-                                                <img src="assets/images/user/u1.png" alt="user"> مهسا
+                                                <img src="{{ asset('storage/'.$workshop->image) }}" alt="user"> {{ $workshop->teacher }}
                                             </div>
                                             <div class="star-list">
                                                 <i class="fa-solid fa-star"></i>
@@ -176,21 +169,21 @@
                                         </div>
 
                                         <div class="explore-img">
-                                            <div class="featured-price">۲۰۰تومان</div>
+                                            <div class="featured-price">{{ $workshop->price }} تومان </div>
                                             <figure class="image-effect">
-                                                <img src="assets/images/explore/ex1.jpg" alt="explore images"
+                                                <img src="{{ asset('storage/'.$workshop->image) }}" alt="explore images"
                                                      class="img-fluid w-100" loading="lazy">
                                             </figure>
                                             <div class="heart-content"><i class="fa-solid fa-heart"></i> 12</div>
-                                            <h5 class="featured-title"><a href="product-details.html">جنگجوی فانتزی</a>
+                                            <h5 class="featured-title"><a href="{{ url('دپارتمان-اموزش-و-پژوهش/دوره-های-آموزشی/' . $workshop->slug) }}">{{$workshop->title}}</a>
                                             </h5>
                                         </div>
 
                                         <div
                                             class="explore-item-footer d-flex align-items-center justify-content-between">
                                             <div class="explore-title">
-                                                <div class="img"><img src="assets/images/com-logo/midjouruey.png"
-                                                                      alt="explore"></div>
+                                                <div class="img">
+                                                    <img src="{{ asset('storage/'.$workshop->image) }}"  alt="explore"></div>
                                                 میدجرنی
                                             </div>
                                             <div class="view-list"><i class="fa-regular fa-eye"></i> 341</div>
@@ -198,184 +191,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="content-box top-reveal">
-                                    <div class="explore-item">
-                                        <div
-                                            class="explore-item-header d-flex align-items-center justify-content-between">
-                                            <div class="explore-title">
-                                                <img src="assets/images/user/u1.png" alt="user"> مهسا
-                                            </div>
-                                            <div class="star-list">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-
-                                        <div class="explore-img">
-                                            <div class="featured-price">۲۰۰تومان</div>
-                                            <figure class="image-effect">
-                                                <img src="assets/images/explore/ex1.jpg" alt="explore images"
-                                                     class="img-fluid w-100" loading="lazy">
-                                            </figure>
-                                            <div class="heart-content"><i class="fa-solid fa-heart"></i> 12</div>
-                                            <h5 class="featured-title"><a href="product-details.html">جنگجوی فانتزی</a>
-                                            </h5>
-                                        </div>
-
-                                        <div
-                                            class="explore-item-footer d-flex align-items-center justify-content-between">
-                                            <div class="explore-title">
-                                                <div class="img"><img src="assets/images/com-logo/midjouruey.png"
-                                                                      alt="explore"></div>
-                                                میدجرنی
-                                            </div>
-                                            <div class="view-list"><i class="fa-regular fa-eye"></i> 341</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="content-box top-reveal">
-                                    <div class="explore-item">
-                                        <div
-                                            class="explore-item-header d-flex align-items-center justify-content-between">
-                                            <div class="explore-title">
-                                                <img src="assets/images/user/u1.png" alt="user"> مهسا
-                                            </div>
-                                            <div class="star-list">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-
-                                        <div class="explore-img">
-                                            <div class="featured-price">۲۰۰تومان</div>
-                                            <figure class="image-effect">
-                                                <img src="assets/images/explore/ex1.jpg" alt="explore images"
-                                                     class="img-fluid w-100" loading="lazy">
-                                            </figure>
-                                            <div class="heart-content"><i class="fa-solid fa-heart"></i> 12</div>
-                                            <h5 class="featured-title"><a href="product-details.html">جنگجوی فانتزی</a>
-                                            </h5>
-                                        </div>
-
-                                        <div
-                                            class="explore-item-footer d-flex align-items-center justify-content-between">
-                                            <div class="explore-title">
-                                                <div class="img"><img src="assets/images/com-logo/midjouruey.png"
-                                                                      alt="explore"></div>
-                                                میدجرنی
-                                            </div>
-                                            <div class="view-list"><i class="fa-regular fa-eye"></i> 341</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="content-box top-reveal">
-                                    <div class="explore-item">
-                                        <div
-                                            class="explore-item-header d-flex align-items-center justify-content-between">
-                                            <div class="explore-title">
-                                                <img src="assets/images/user/u1.png" alt="user"> مهسا
-                                            </div>
-                                            <div class="star-list">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-
-                                        <div class="explore-img">
-                                            <div class="featured-price">۲۰۰تومان</div>
-                                            <figure class="image-effect">
-                                                <img src="assets/images/explore/ex1.jpg" alt="explore images"
-                                                     class="img-fluid w-100" loading="lazy">
-                                            </figure>
-                                            <div class="heart-content"><i class="fa-solid fa-heart"></i> 12</div>
-                                            <h5 class="featured-title"><a href="product-details.html">جنگجوی فانتزی</a>
-                                            </h5>
-                                        </div>
-
-                                        <div
-                                            class="explore-item-footer d-flex align-items-center justify-content-between">
-                                            <div class="explore-title">
-                                                <div class="img"><img src="assets/images/com-logo/midjouruey.png"
-                                                                      alt="explore"></div>
-                                                میدجرنی
-                                            </div>
-                                            <div class="view-list"><i class="fa-regular fa-eye"></i> 341</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="content-box top-reveal">
-                                    <div class="explore-item">
-                                        <div
-                                            class="explore-item-header d-flex align-items-center justify-content-between">
-                                            <div class="explore-title">
-                                                <img src="assets/images/user/u1.png" alt="user"> مهسا
-                                            </div>
-                                            <div class="star-list">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-
-                                        <div class="explore-img">
-                                            <div class="featured-price">۲۰۰تومان</div>
-                                            <figure class="image-effect">
-                                                <img src="assets/images/explore/ex1.jpg" alt="explore images"
-                                                     class="img-fluid w-100" loading="lazy">
-                                            </figure>
-                                            <div class="heart-content"><i class="fa-solid fa-heart"></i> 12</div>
-                                            <h5 class="featured-title"><a href="product-details.html">جنگجوی فانتزی</a>
-                                            </h5>
-                                        </div>
-
-                                        <div
-                                            class="explore-item-footer d-flex align-items-center justify-content-between">
-                                            <div class="explore-title">
-                                                <div class="img"><img src="assets/images/com-logo/midjouruey.png"
-                                                                      alt="explore"></div>
-                                                میدجرنی
-                                            </div>
-                                            <div class="view-list"><i class="fa-regular fa-eye"></i> 341</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- /swiper-slide -->
-
+                            @endforeach
                         </div>
-
-                        <!-- Pagination + Arrows -->
                         <div class="swiper-pagination"></div>
                         <div class="swiper-button-prev" aria-label="قبلی"></div>
                         <div class="swiper-button-next" aria-label="بعدی"></div>
                     </div>
-                    <!-- /workshop-slider -->
                 </div>
             </div>
         </div>
     </section>
-    {{--    End WorkShop section    --}}
-
-    {{--    About       --}}
     <section class="about-section section-two-bg py-120">
         <div class="container">
             <div class="row row-gap-4">
@@ -417,9 +242,6 @@
             </div>
         </div>
     </section>
-    {{--    End About   --}}
-
-    {{--    Service         --}}
     <section class="feature-section py-120">
         <div class="container">
             <div class="row justify-content-center">
@@ -594,9 +416,7 @@
             </div>
         </div>
     </section>
-    {{--    End Service     --}}
 
-    {{--    About       --}}
     <section class="generate-image-section section-two-bg py-120">
         <div class="container">
             <div class="row row-gap-5 justify-content-between">
@@ -655,10 +475,6 @@
             </div>
         </div>
     </section>
-    {{--    End About   --}}
-
-
-    {{--    Portfolio       --}}
     <section class="portfolio-section section-one-bg py-120">
         <div class="container">
             <div class="row">
@@ -762,10 +578,6 @@
             </div>
         </div>
     </section>
-    {{--    End Portfolio   --}}
-
-
-    {{--    Text-slide          --}}
     <div class="section-two-bg py-60 @@services-text-slide">
         <div class="text-slide swiper">
             <div class="swiper-wrapper slide-transition">
@@ -812,9 +624,6 @@
             </div>
         </div>
     </div>
-    {{--    End Text-slide      --}}
-
-    {{--    Working-process     --}}
     <section class="working-process-section section-one-bg py-120">
         <div class="container">
             <div class="row row-gap-5">
@@ -943,9 +752,6 @@
             </div>
         </div>
     </section>
-{{--    End Working-process     --}}
-
-    {{--    Pricing         --}}
     <section class="pricing-section section-two-bg py-120">
         <div class="container">
             <div class="row">
@@ -1008,9 +814,6 @@
             </div>
         </div>
     </section>
-    {{--    End Pricing     --}}
-
-    {{--    Testimonials        --}}
     <section class="testimonials-section section-one-bg py-120">
         <div class="container">
             <div class="row">
@@ -1156,9 +959,6 @@
             </div>
         </div>
     </section>
-    {{--    End Testimonials    --}}
-
-    {{--    CTA         --}}
     <section class="call-to-action-section section-base-bg py-120">
         <div class="container">
             <div class="row row-gap-5 justify-content-between">
@@ -1189,9 +989,6 @@
             </div>
         </div>
     </section>
-    {{--    End CTA     --}}
-
-    {{--    Blog        --}}
     <section class="blog-section section-one-bg py-120">
         <div class="container">
             <div class="row row-gap-4 justify-content-center">
@@ -1341,9 +1138,6 @@
             </div>
         </div>
     </section>
-    {{--    End Blog    --}}
-
-    {{--    Client      --}}
     <section class="company-section section-two-bg py-100">
         <div class="container">
             <div class="row mb-60">
@@ -1358,42 +1152,18 @@
                 <div class="col-lg-12">
                     <div class="company-slide swiper">
                         <div class="swiper-wrapper slide-transition">
-                            <div class="swiper-slide inner-slide-element">
-                                <img src="assets/images/company/1.png" alt="Company Image">
-                            </div>
-                            <div class="swiper-slide inner-slide-element">
-                                <img src="assets/images/company/2.png" alt="Company Image">
-                            </div>
-                            <div class="swiper-slide inner-slide-element">
-                                <img src="assets/images/company/3.png" alt="Company Image">
-                            </div>
-                            <div class="swiper-slide inner-slide-element">
-                                <img src="assets/images/company/4.png" alt="Company Image">
-                            </div>
-                            <div class="swiper-slide inner-slide-element">
-                                <img src="assets/images/company/5.png" alt="Company Image">
-                            </div>
-                            <div class="swiper-slide inner-slide-element">
-                                <img src="assets/images/company/1.png" alt="Company Image">
-                            </div>
-                            <div class="swiper-slide inner-slide-element">
-                                <img src="assets/images/company/2.png" alt="Company Image">
-                            </div>
-                            <div class="swiper-slide inner-slide-element">
-                                <img src="assets/images/company/3.png" alt="Company Image">
-                            </div>
-                            <div class="swiper-slide inner-slide-element">
-                                <img src="assets/images/company/4.png" alt="Company Image">
-                            </div>
+                            @foreach($customers as $customer)
+                                <div class="swiper-slide inner-slide-element">
+                                    <img src="{{$customer->image}}" alt="{{$customer->name}}">
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    {{--    End Client  --}}
 
-    {{--    Team        --}}
     <section class="team-section section-one-bg py-120">
         <div class="container">
             <div class="row row-gap-4 justify-content-between align-items-end">
@@ -1415,156 +1185,28 @@
 
             <div class="row mt-60">
                 <div class="col-lg-12">
-                    <!-- کانتینر اسلایدر -->
                     <div class="team-slider swiper">
                         <div class="swiper-wrapper">
+                            @foreach($emploees as $emploee)
                             <div class="swiper-slide">
                                 <div class="team-item top-reveal">
                                     <figure class="image-effect">
-                                        <img src="assets/images/team/1.jpg" alt="member"
-                                             class="img-fluid w-100" loading="lazy">
+                                        <img src="{{ asset($emploee->image) }}" alt="{{ $emploee->fullname }}" class="img-fluid w-100" loading="lazy">
                                     </figure>
                                     <ul class="social">
-                                        <li><a href="https://www.facebook.com/" target="_blank"><i
-                                                    class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="https://www.instagram.com/" target="_blank"><i
-                                                    class="fab fa-instagram"></i></a></li>
-                                        <li><a href="https://www.pinterest.com/" target="_blank"><i
-                                                    class="fa-brands fa-pinterest-p"></i></a></li>
+                                        <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="https://www.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a></li>
                                     </ul>
                                     <div class="name-details">
-                                        <h4><a href="javascript:void(0);">نسترن سلطانی</a></h4>
-                                        <p>طراح رابط کاربری</p>
+                                        <h4><a href="{{ url('تیم-ما/رزومه/'.$emploee->slug) }}">{{ $emploee->fullname }}</a></h4>
+                                        <p>{{ $emploee->side }}</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="team-item top-reveal">
-                                    <figure class="image-effect">
-                                        <img src="assets/images/team/2.jpg" alt="member"
-                                             class="img-fluid w-100" loading="lazy">
-                                    </figure>
-                                    <ul class="social">
-                                        <li><a href="https://www.facebook.com/" target="_blank"><i
-                                                    class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="https://www.instagram.com/" target="_blank"><i
-                                                    class="fab fa-instagram"></i></a></li>
-                                        <li><a href="https://www.pinterest.com/" target="_blank"><i
-                                                    class="fa-brands fa-pinterest-p"></i></a></li>
-                                    </ul>
-                                    <div class="name-details">
-                                        <h4><a href="javascript:void(0);">امیرحسین زین الدینی</a></h4>
-                                        <p>طراح محصول</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="team-item top-reveal">
-                                    <figure class="image-effect">
-                                        <img src="assets/images/team/2.jpg" alt="member"
-                                             class="img-fluid w-100" loading="lazy">
-                                    </figure>
-                                    <ul class="social">
-                                        <li><a href="https://www.facebook.com/" target="_blank"><i
-                                                    class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="https://www.instagram.com/" target="_blank"><i
-                                                    class="fab fa-instagram"></i></a></li>
-                                        <li><a href="https://www.pinterest.com/" target="_blank"><i
-                                                    class="fa-brands fa-pinterest-p"></i></a></li>
-                                    </ul>
-                                    <div class="name-details">
-                                        <h4><a href="javascript:void(0);">محمدحسین دیوان بیگی</a></h4>
-                                        <p>طراح محصول</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="team-item top-reveal">
-                                    <figure class="image-effect">
-                                        <img src="assets/images/team/2.jpg" alt="member"
-                                             class="img-fluid w-100" loading="lazy">
-                                    </figure>
-                                    <ul class="social">
-                                        <li><a href="https://www.facebook.com/" target="_blank"><i
-                                                    class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="https://www.instagram.com/" target="_blank"><i
-                                                    class="fab fa-instagram"></i></a></li>
-                                        <li><a href="https://www.pinterest.com/" target="_blank"><i
-                                                    class="fa-brands fa-pinterest-p"></i></a></li>
-                                    </ul>
-                                    <div class="name-details">
-                                        <h4><a href="javascript:void(0);">مهسا رهنما</a></h4>
-                                        <p>طراح محصول</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="team-item top-reveal">
-                                    <figure class="image-effect">
-                                        <img src="assets/images/team/2.jpg" alt="member"
-                                             class="img-fluid w-100" loading="lazy">
-                                    </figure>
-                                    <ul class="social">
-                                        <li><a href="https://www.facebook.com/" target="_blank"><i
-                                                    class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="https://www.instagram.com/" target="_blank"><i
-                                                    class="fab fa-instagram"></i></a></li>
-                                        <li><a href="https://www.pinterest.com/" target="_blank"><i
-                                                    class="fa-brands fa-pinterest-p"></i></a></li>
-                                    </ul>
-                                    <div class="name-details">
-                                        <h4><a href="javascript:void(0);">مهسا رهنما</a></h4>
-                                        <p>طراح محصول</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="team-item top-reveal">
-                                    <figure class="image-effect">
-                                        <img src="assets/images/team/1.jpg" alt="member"
-                                             class="img-fluid w-100" loading="lazy">
-                                    </figure>
-                                    <ul class="social">
-                                        <li><a href="https://www.facebook.com/" target="_blank"><i
-                                                    class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="https://www.instagram.com/" target="_blank"><i
-                                                    class="fab fa-instagram"></i></a></li>
-                                        <li><a href="https://www.pinterest.com/" target="_blank"><i
-                                                    class="fa-brands fa-pinterest-p"></i></a></li>
-                                    </ul>
-                                    <div class="name-details">
-                                        <h4><a href="javascript:void(0);">نسترن سلطانی</a></h4>
-                                        <p>طراح رابط کاربری</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="team-item top-reveal">
-                                    <figure class="image-effect">
-                                        <img src="assets/images/team/1.jpg" alt="member"
-                                             class="img-fluid w-100" loading="lazy">
-                                    </figure>
-                                    <ul class="social">
-                                        <li><a href="https://www.facebook.com/" target="_blank"><i
-                                                    class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="https://www.instagram.com/" target="_blank"><i
-                                                    class="fab fa-instagram"></i></a></li>
-                                        <li><a href="https://www.pinterest.com/" target="_blank"><i
-                                                    class="fa-brands fa-pinterest-p"></i></a></li>
-                                    </ul>
-                                    <div class="name-details">
-                                        <h4><a href="javascript:void(0);">نسترن سلطانی</a></h4>
-                                        <p>طراح رابط کاربری</p>
-                                    </div>
-                                </div>
-                            </div>
-
+                            @endforeach
                         </div>
-
-                        <!-- پیجینیشن -->
                         <div class="swiper-pagination"></div>
-
-                        <!-- اگر فلش می‌خوای، uncomment کن و JS رو هم فعال کن -->
                         <div class="swiper-button-prev" aria-label="قبلی"></div>
                         <div class="swiper-button-next" aria-label="بعدی"></div>
                     </div>
@@ -1572,7 +1214,6 @@
             </div>
         </div>
     </section>
-    {{--    End Team    --}}
 @endsection
 
 @push('page_scripts')

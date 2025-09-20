@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_','-',app()->getLocale()) }}" dir="rtl">
 <head>
     @include('site.partials.head')
-    <title>@yield('title', 'PixgiX - AI Image Generator')</title>
+    <title>@yield('title', 'موسسه حقوقی دادورزان امین')</title>
     @stack('page_styles')
 </head>
 <body>
@@ -10,7 +10,7 @@
 {{-- Preloader --}}
 <div id="preloader" dir="ltr">
     <div id="text">
-        <p>P</p><p>i</p><p>x</p><p>g</p><p>i</p><p class="active">X</p>
+        <p>امین</p><p>دادورزان</p><p>حقوقی</p><p class="active">موسسه</p>
     </div>
 </div>
 

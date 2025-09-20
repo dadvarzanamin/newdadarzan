@@ -4,7 +4,7 @@
             <div class="row row-gap-5 justify-content-center">
                 <div class="col-lg-4 col-md-8">
                     <div class="footer-widget__item text-center text-lg-end">
-                        <a href="{{ route('home') }}" class="d-block">
+                        <a href="{{ route('/') }}" class="d-block">
                             <img src="{{ asset('assets/images/logo/logo.svg') }}" alt="logo">
                         </a>
                         <br>
@@ -30,22 +30,22 @@
                         <div class="footer-widget__item">
                             <h4>شرکت</h4>
                             <ul class="useful-list">
-                                <li><a href="{{ route('about') }}">درباره ما</a></li>
-                                <li><a href="{{ route('services') }}">خدمات</a></li>
-                                <li><a href="{{ route('contact') }}">پشتیبانی</a></li>
-                                <li><a href="{{ route('login') }}">ورود</a></li>
-                                <li><a href="{{ route('register') }}">ثبت نام</a></li>
+                                <li><a href="{{ route('/') }}">درباره ما</a></li>
+                                <li><a href="{{ route('/') }}">خدمات</a></li>
+                                <li><a href="{{ route('/') }}">پشتیبانی</a></li>
+                                <li><a href="{{ route('/') }}">ورود</a></li>
+                                <li><a href="{{ route('/') }}">ثبت نام</a></li>
                             </ul>
                         </div>
 
                         <div class="footer-widget__item">
                             <h4>لینک های سریع</h4>
                             <ul class="useful-list">
-                                <li><a href="{{ route('generator') }}">تولید</a></li>
-                                <li><a href="{{ route('team') }}">تیم ما</a></li>
-                                <li><a href="{{ route('pricing') }}">قیمت گذاری ها</a></li>
-                                <li><a href="{{ route('blog.grid') }}">مقالات</a></li>
-                                <li><a href="{{ route('contact') }}">تماس با ما</a></li>
+                                <li><a href="{{ route('/') }}">تولید</a></li>
+                                <li><a href="{{ route('/') }}">تیم ما</a></li>
+                                <li><a href="{{ route('/') }}">قیمت گذاری ها</a></li>
+                                <li><a href="{{ route('/') }}">مقالات</a></li>
+                                <li><a href="{{ route('/') }}">تماس با ما</a></li>
                             </ul>
                         </div>
 
@@ -73,12 +73,12 @@
                 <div class="col-lg-12">
                     <div class="copy-right__content">
                         <p class="copy-right__text">
-                            تمامی حقوق محفوظ است. طراحی شده توسط <a href="{{ route('home') }}">iarsalan</a>
+                            تمامی حقوق محفوظ است. طراحی شده توسط <a href="{{ route('/') }}">iarsalan</a>
                         </p>
                         <ul class="nav gap-4 row-gap-2">
-                            <li><a href="{{ route('contact') }}">پشتیبانی</a></li>
-                            <li><a href="{{ route('privacy') }}">حریم خصوصی</a></li>
-                            <li><a href="{{ route('terms') }}">شرایط خدمات</a></li>
+                            <li><a href="{{ route('/') }}">پشتیبانی</a></li>
+                            <li><a href="{{ route('/') }}">حریم خصوصی</a></li>
+                            <li><a href="{{ route('/') }}">شرایط خدمات</a></li>
                         </ul>
                     </div>
                 </div>

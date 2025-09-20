@@ -2,12 +2,58 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Models\Menu;
+use App\Models\Submenu;
+
+Route::group(['namespace' => 'App\Http\Controllers' ,'prefix' => '/'] , function () {
+
+    $sitemenus= Menu::select('slug', 'class', 'submenu')->get();
+    $submenus = Submenu::select('id', 'slug', 'class')->get();
+
+//    $userAgent = request()->header('User-Agent');
+//    $deviceDetector = new DeviceDetector($userAgent);
+//    $deviceDetector->parse();
+//    if ($deviceDetector->isMobile()) {
+//        Session::put('device', 'mobile');
+//    } else {
+//        Session::put('device', 'desktop');
+//    }
+//    if (Session::get('device') == 'desktop') {
+        foreach ($sitemenus as $menu) {
+            if ($menu->submenu == 0) {
+                Route::get($menu->slug, 'Site\IndexController@' . $menu->class)->name($menu->slug);
+            } else {
+                foreach ($submenus as $submenu) {
+                    if ($menu->submenu_route == 1) {
+                        if ($submenu->menu_id == $menu->id) {
+                            Route::get($menu->slug . '/' . $submenu->slug, 'Site\IndexController@' . $submenu->class);
+                        }
+                    }
+                }
+            }
+        }
+//    }elseif (Session::get('device') == 'mobile'){
+//
+//        foreach ($sitemenus as $menu) {
+//            if ($menu->submenu == 0) {
+//                Route::get($menu->slug, 'Mobile\IndexController@' . $menu->class)->name($menu->slug);
+//            } else {
+//                foreach ($submenus as $submenu) {
+//                    if ($menu->submenu_route == 1) {
+//                        if ($submenu->menu_id == $menu->id) {
+//                            Route::get($menu->slug . '/' . $submenu->slug, 'Mobile\IndexController@' . $submenu->class);
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+});
 
 
 Route::middleware('admin')->namespace('App\Http\Controllers\Panel')->group(function () {
-    Route::get('/'                         , 'IndexController@index')->name('dashboard');
-    Route::get('dashboard'                 , 'IndexController@index')->name('dashboard');
-    Route::get('panel/getcities/{id}'     , 'IndexController@getcities')->name('getcities');
+    Route::get('panel'                    , 'IndexController@index')->name('dashboard');
+    Route::get('panel/getcities/{id}'      , 'IndexController@getcities')->name('getcities');
     Route::resource('panel/finance'      , 'FinancialController');
     Route::resource('panel/owner'        , 'OwnerController');
     Route::resource('panel/menupanel'    , 'MenupanelController');
@@ -63,3 +109,6 @@ Route::post('panel/fullregister', [App\Http\Controllers\Auth\FullRegisterControl
 Route::patch('panel/fullregister/{id}', [App\Http\Controllers\Auth\FullRegisterController::class, 'update'])->name('fullregister.update');
 Route::get('logout'             , [App\Http\Controllers\Auth\FullRegisterController::class, 'logout'])->name('logout');
 Route::post('logout'            , [App\Http\Controllers\Auth\FullRegisterController::class, 'logout'])->name('logout');
+
+
+
