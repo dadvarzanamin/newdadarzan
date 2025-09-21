@@ -5,10 +5,10 @@
                 <div class="col-lg-4 col-md-8">
                     <div class="footer-widget__item text-center text-lg-end">
                         <a href="{{ route('/') }}" class="d-block">
-                            <img src="{{ asset('assets/images/logo/logo.svg') }}" alt="logo">
+                            <img src="{{ asset('site/assets/images/logo/logodadvarzan.png') }}" style="max-width: 60px" alt="logo">
                         </a>
                         <br>
-                        <p>پیکس‌گیکس پلتفرم مبتنی بر هوش مصنوعی ...</p>
+                        <p>موسسه حقوقی دادورزان امین</p>
                         <br>
                         <div class="footer-email">
                             <a href="#"><span class="__cf_email__">[email&#160;protected]</span></a>
@@ -50,8 +50,8 @@
                         </div>
 
                         <div class="footer-widget__item">
-                            <h4>آپدیت بمانید</h4>
-                            <p>به خبرنامه Pixgix بپیوندید ...</p>
+                            <h4>بروز بمانید</h4>
+                            <p>به خبرنامه ما بپیوندید ...</p>
                             <div class="footer-widget__form">
                                 <form action="#" method="post">
                                     @csrf
@@ -73,7 +73,7 @@
                 <div class="col-lg-12">
                     <div class="copy-right__content">
                         <p class="copy-right__text">
-                            تمامی حقوق محفوظ است. طراحی شده توسط <a href="{{ route('/') }}">iarsalan</a>
+                            تمامی حقوق محفوظ است. طراحی شده توسط <a href="{{ route('/') }}">تیم توسعه دادروزان امین</a>
                         </p>
                         <ul class="nav gap-4 row-gap-2">
                             <li><a href="{{ route('/') }}">پشتیبانی</a></li>

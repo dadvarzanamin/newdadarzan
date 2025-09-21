@@ -203,6 +203,7 @@
         </div>
     </section>
 
+    {{--about section--}}
     <section class="about-section section-two-bg py-60">
         <div class="container">
             <div class="row row-gap-4">
@@ -210,17 +211,17 @@
                     <div class="about-section__img" dir="ltr">
                         <div class="image-one">
                             <figure class="image-effect right-reveal">
-                                <img src="{{asset('site/assets/images/about/1.jpg')}}" alt="about images"
+                                <img src="{{asset('site/assets/images/about/about-new1-1.png')}}" alt="about images"
                                      class="img-fluid w-100">
                             </figure>
                         </div>
                         <div class="image-two d-grid">
                             <figure class="image-effect bottom-reveal">
-                                <img src="{{asset('site/assets/images/about/2.jpg')}}" alt="about images"
+                                <img src="{{asset('site/assets/images/about/2-new2.png')}}" alt="about images"
                                      class="img-fluid w-100">
                             </figure>
                             <figure class="image-effect top-reveal">
-                                <img src="{{asset('site/assets/images/about/3.jpg')}}" alt="about images"
+                                <img src="{{asset('site/assets/images/about/3-new.png')}}" alt="about images"
                                      class="img-fluid w-100">
                             </figure>
                         </div>
@@ -252,6 +253,7 @@
         </div>
     </section>
 
+    {{--service section--}}
     <section class="feature-section py-60">
         <div class="container">
             <div class="row justify-content-center">
@@ -597,7 +599,7 @@
             <div class="swiper-wrapper slide-transition">
                 <div class="swiper-slide inner-slide-element">
                     <div class="slide-text">
-                        AI IMAGE GENERATE
+                        وکلای حرفه ای
                     </div>
                 </div>
                 <div class="swiper-slide inner-slide-element">
@@ -607,7 +609,7 @@
                 </div>
                 <div class="swiper-slide inner-slide-element">
                     <div class="slide-text">
-                        AI IMAGE GENERATE
+                        بیش از یک دهه تجربه موفق
                     </div>
                 </div>
                 <div class="swiper-slide inner-slide-element">
@@ -617,17 +619,7 @@
                 </div>
                 <div class="swiper-slide inner-slide-element">
                     <div class="slide-text">
-                        AI IMAGE GENERATE
-                    </div>
-                </div>
-                <div class="swiper-slide inner-slide-element">
-                    <div class="slide-text">
-                        <img src="{{asset('site/assets/images/shape/star.svg')}}" alt="icon">
-                    </div>
-                </div>
-                <div class="swiper-slide inner-slide-element">
-                    <div class="slide-text">
-                        AI IMAGE GENERATE
+                        خدمات نوین
                     </div>
                 </div>
                 <div class="swiper-slide inner-slide-element">
@@ -638,6 +630,7 @@
             </div>
         </div>
     </div>
+
 
     <section class="working-process-section section-one-bg py-60">
         <div class="container">
@@ -652,15 +645,16 @@
                             <h2 class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    تولید محتوای هوش مصنوعی چقدر طول می‌کشد؟
+                                    در دعاوی حقوقی تنظیم دادخواست ضروری است؟
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show"
                                  data-bs-parent="#accordionWorking">
                                 <div class="accordion-body">
-                                    <p>ماموریت ما این است که با بهره‌گیری از قدرت هوش مصنوعی برای تولید تصاویر
-                                        خیره‌کننده و با کیفیت بالا، انقلابی در نحوه خلق تصاویر بصری ایجاد کنیم. چه یک
-                                        هنرمند، طراح یا متخصص کسب و کار باشید.</p>
+                                    <p>
+                                        بله،با اینکه در دعاوی کیفری می توان بر روی هر برگه ای شکایت را تنظیم نمود ، در
+                                        مورد دعاوی حقوقی درخواست رسیدگی الزاما با تقدیم دادخواست صورت می پذیرد .
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -668,15 +662,20 @@
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    آیا می‌توانم برای تصاویر تولید شده توسط هوش مصنوعی، استایل‌های خاصی درخواست کنم؟
+                                    منظور از استشهادیه چیست؟
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse"
                                  data-bs-parent="#accordionWorking">
                                 <div class="accordion-body">
-                                    <p>ماموریت ما این است که با بهره‌گیری از قدرت هوش مصنوعی برای تولید تصاویر
-                                        خیره‌کننده و با کیفیت بالا، انقلابی در نحوه خلق تصاویر بصری ایجاد کنیم. چه یک
-                                        هنرمند، طراح یا متخصص کسب و کار باشید.</p>
+                                    <p>
+                                        استشهادیه سندی کتبی می‌باشد که شخصی که شاهد ماجرا می‌باشد گزارش‌های خود را ثبت
+                                        می‌کند و برای درست بودن صحبت‌های خود و تضمین اعتبار آن را امضا می‌کند. شهادت
+                                        شاهدان با استشهاد برابر نیست و زمانی که شاهد از حضور در دادگاه امتناع ورزیده و
+                                        یا تعداد شاهدان برای حضور در دادگاه زیاد باشد از استشهادیه استفاده می‌شود. قبول
+                                        استشهادیه از طرف دادگاه شرایط خاص خود را دارد که برای تنظیم استشهادیه بهتر است
+                                        با وکیل مشورت کنید.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -685,15 +684,19 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseThree" aria-expanded="false"
                                         aria-controls="collapseThree">
-                                    چه فرمت‌هایی برای دانلود فایل‌ها ارائه می‌دهید؟
+                                    وجه التزام در قرارداد چیست؟
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse"
                                  data-bs-parent="#accordionWorking">
                                 <div class="accordion-body">
-                                    <p>ماموریت ما این است که با بهره‌گیری از قدرت هوش مصنوعی برای تولید تصاویر
-                                        خیره‌کننده و با کیفیت بالا، انقلابی در نحوه خلق تصاویر بصری ایجاد کنیم. چه یک
-                                        هنرمند، طراح یا متخصص کسب و کار باشید.</p>
+                                    <p>
+                                        می‌توان گفت توافق مالی است در قرارداد که در صورت عدم انجام تعهدات یا تاخیر در
+                                        انجام تعهدات شخص خاطی باید پرداخت نماید و یا به عبارت دیگر مبلغی است که در صورت
+                                        تخلف از مفاد قرارداد شخص متخلف (فروشنده یا خریدار) ملزم به پرداخت آن است. وجه
+                                        التزام در قرارداد در دو نوع 1- وجه التزام بابت عدم اجرای تعهد 2- وجه التزام بابت
+                                        تاخیر در اجرای تعهد عنوان می‌شود.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -702,15 +705,17 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseFour" aria-expanded="false"
                                         aria-controls="collapseFour">
-                                    آیا محتوای تولید شده توسط هوش مصنوعی قابل تنظیم است؟
+                                    در صورت مجهول المکان بودن خوانده چه باید کرد؟
                                 </button>
                             </h2>
                             <div id="collapseFour" class="accordion-collapse collapse"
                                  data-bs-parent="#accordionWorking">
                                 <div class="accordion-body">
-                                    <p>ماموریت ما این است که با بهره‌گیری از قدرت هوش مصنوعی برای تولید تصاویر
-                                        خیره‌کننده و با کیفیت بالا، انقلابی در نحوه خلق تصاویر بصری ایجاد کنیم. چه یک
-                                        هنرمند، طراح یا متخصص کسب و کار باشید.</p>
+                                    <p>
+                                        اگر محل سکونت خوانده مشخص نباشد یعنی مجهول المکان باشد، باید مراحل مختلفی همچون
+                                        آگهی در روزنامه کثیر الانتشار را طی کنید. در این آگهی باید وقت رسیدگی به خوانده
+                                        اعلام شود که بعد از آن رای غیابی صادر شود.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -724,9 +729,9 @@
                                     <i class="flaticon-rating-stars"></i>
                                 </div>
                                 <div class="number">
-                                    <span class="odometer" data-odometer-final="75">40</span>K+
+                                    <span class="odometer" data-odometer-final="75">40</span>+
                                 </div>
-                                <p>مشتریان راضی</p>
+                                <p>مشاوره حقوقی دادگستری</p>
                             </div>
                         </div>
                         <div class="process-item bottom-reveal">
@@ -735,9 +740,9 @@
                                     <i class="flaticon-image-gallery"></i>
                                 </div>
                                 <div class="number">
-                                    <span class="odometer" data-odometer-final="29">10</span>M
+                                    <span class="odometer" data-odometer-final="29">10</span>+
                                 </div>
-                                <p>ایجاد تصویر</p>
+                                <p>حقوق مهاجرتی</p>
                             </div>
                         </div>
                         <div class="process-item top-reveal">
@@ -748,7 +753,7 @@
                                 <div class="number">
                                     <span class="odometer" data-odometer-final="9">2</span>/10
                                 </div>
-                                <p>رتبه بندی مشتریان</p>
+                                <p>کلیه امور وکالتی</p>
                             </div>
                         </div>
                         <div class="process-item top-reveal">
@@ -757,9 +762,9 @@
                                     <i class="flaticon-workflow"></i>
                                 </div>
                                 <div class="number">
-                                    <span class="odometer" data-odometer-final="12">9</span>k+
+                                    <span class="odometer" data-odometer-final="12">9</span>+
                                 </div>
-                                <p>پروژه درحال اجرا</p>
+                                <p>کارگاه های برگزار شده</p>
                             </div>
                         </div>
                     </div>
@@ -831,13 +836,14 @@
     {{--        </div>--}}
     {{--    </section>--}}
 
+    {{--testimonials section--}}
     <section class="testimonials-section section-one-bg py-60">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title text-center">
                         <span class="sub-title top-reveal">دیدگاه مشتریان</span>
-                        <h2 class="top-reveal">مشتریان ما درباره Pixgix می‌گویند</h2>
+                        <h2 class="top-reveal">مشتریان ما درباره دادورزان امین می‌گویند</h2>
                     </div>
                 </div>
             </div>
@@ -851,11 +857,12 @@
                                         <i class="flaticon-quote"></i>
                                     </div>
                                     <div class="body-text">
-                                        <p>"من از کیفیت تصاویر تولید شده توسط هوش مصنوعی شگفت‌زده شدم! این پلتفرم
-                                            فوق‌العاده شهودی است و در عرض چند دقیقه، تصاویری خیره‌کننده و کاملاً مطابق
-                                            با دیدگاه من داشت. به عنوان کسی که مهارت‌های طراحی محدودی دارد، از حرفه‌ای
-                                            به نظر رسیدن تصاویر شگفت‌زده شدم. این ابزار ساعت‌ها در کار من صرفه‌جویی کرده
-                                            است و نمی‌توانم اداره کسب و کارم را بدون آن تصور کنم."</p>
+                                        <p>
+                                            همکاری با مؤسسه حقوقی دادورزان امین تجربه‌ای آرامش‌بخش و مطمئن برای من بود.
+                                            تیم حرفه‌ای وکلا با دقت و تخصص تمام مراحل پرونده‌ام را پیگیری کردند و همیشه
+                                            با صبر و شفافیت پاسخگوی سؤالاتم بودند. نتیجه‌ای که به دست آمد بسیار فراتر از
+                                            انتظاراتم بود و باعث شد ارزش واقعی داشتن یک همراه حقوقی متخصص را درک کنم.
+                                        </p>
 
                                         <div class="user">
                                             <div class="img">
@@ -882,11 +889,13 @@
                                         <i class="flaticon-quote"></i>
                                     </div>
                                     <div class="body-text">
-                                        <p>"من از کیفیت تصاویر تولید شده توسط هوش مصنوعی شگفت‌زده شدم! این پلتفرم
-                                            فوق‌العاده شهودی است و در عرض چند دقیقه، تصاویری خیره‌کننده و کاملاً مطابق
-                                            با دیدگاه من داشت. به عنوان کسی که مهارت‌های طراحی محدودی دارد، از حرفه‌ای
-                                            به نظر رسیدن تصاویر شگفت‌زده شدم. این ابزار ساعت‌ها در کار من صرفه‌جویی کرده
-                                            است و نمی‌توانم اداره کسب و کارم را بدون آن تصور کنم."</p>
+                                        <p>
+                                            دادورزان امین نه‌تنها در حوزه حقوقی و وکالت تخصص بالایی دارند، بلکه برخورد
+                                            انسانی و تعهد کاری آنان تحسین‌برانگیز است. از همان ابتدای کار، احساس امنیت و
+                                            اعتماد کامل داشتم و مطمئن بودم پرونده من در بهترین دستان قرار دارد. بدون
+                                            تردید این مجموعه را به هر کسی که به خدمات حقوقی دقیق و مطمئن نیاز دارد توصیه
+                                            می‌کنم.
+                                        </p>
 
                                         <div class="user">
                                             <div class="img">
@@ -913,11 +922,10 @@
                                         <i class="flaticon-quote"></i>
                                     </div>
                                     <div class="body-text">
-                                        <p>"من از کیفیت تصاویر تولید شده توسط هوش مصنوعی شگفت‌زده شدم! این پلتفرم
-                                            فوق‌العاده شهودی است و در عرض چند دقیقه، تصاویری خیره‌کننده و کاملاً مطابق
-                                            با دیدگاه من داشت. به عنوان کسی که مهارت‌های طراحی محدودی دارد، از حرفه‌ای
-                                            به نظر رسیدن تصاویر شگفت‌زده شدم. این ابزار ساعت‌ها در کار من صرفه‌جویی کرده
-                                            است و نمی‌توانم اداره کسب و کارم را بدون آن تصور کنم."</p>
+                                        <p>در برخورد با مسائل حقوقی همیشه نگرانی و استرس وجود دارد، اما با انتخاب
+                                            دادورزان امین تمام این دغدغه‌ها از بین رفت. وکلای این مؤسسه با تسلط کامل بر
+                                            قوانین و ارائه راهکارهای عملی، مسیر پرونده را برایم روشن کردند. تجربه‌ای که
+                                            به من اعتماد و آرامش خاطر داد.</p>
 
                                         <div class="user">
                                             <div class="img">
@@ -944,11 +952,10 @@
                                         <i class="flaticon-quote"></i>
                                     </div>
                                     <div class="body-text">
-                                        <p>"من از کیفیت تصاویر تولید شده توسط هوش مصنوعی شگفت‌زده شدم! این پلتفرم
-                                            فوق‌العاده شهودی است و در عرض چند دقیقه، تصاویری خیره‌کننده و کاملاً مطابق
-                                            با دیدگاه من داشت. به عنوان کسی که مهارت‌های طراحی محدودی دارد، از حرفه‌ای
-                                            به نظر رسیدن تصاویر شگفت‌زده شدم. این ابزار ساعت‌ها در کار من صرفه‌جویی کرده
-                                            است و نمی‌توانم اداره کسب و کارم را بدون آن تصور کنم."</p>
+                                        <p>آنچه دادورزان امین را از سایر مؤسسات متمایز می‌کند، ترکیب دانش حقوقی عمیق با
+                                            مسئولیت‌پذیری واقعی است. در تمام مراحل پرونده‌ام، شفافیت و پیگیری منظم را به
+                                            وضوح دیدم. نتیجه موفقیت‌آمیز پرونده باعث شد مطمئن شوم انتخاب درستی
+                                            داشته‌ام.</p>
 
                                         <div class="user">
                                             <div class="img">
@@ -983,9 +990,11 @@
                 <div class="col-lg-6 col-xl-5 align-self-center">
                     <div class="section-title">
                         <span class="sub-title right-reveal">اکنون به ما بپیوندید</span>
-                        <h2 class="right-reveal">پتانسیل خلاقانه خود را با هوش مصنوعی آزاد کنید</h2>
-                        <p class="right-reveal">ماموریت ما این است که با بهره‌گیری از قدرت هوش مصنوعی برای تولید تصاویر
-                            خیره‌کننده و با کیفیت بالا، انقلابی در نحوه خلق تصاویر ایجاد کنیم.</p>
+                        <h2 class="right-reveal">دیگر نگران مسائل حقوقی خود نباشید</h2>
+                        <p class="right-reveal">ماموریت ما این است که با بهره‌گیری از تجربه و دانش خود بهترین نتیجه ممکن
+                            را برای شما رقم بزنیم.
+
+                        </p>
                         <a href="login.html" class="btn btn--black right-reveal">
                             رایگان ثبت نام کنید
                             <i class="flaticon-right-arrow"></i>
@@ -1039,7 +1048,8 @@
                                         </div>
                                         <a href="{{url('محتوای-آموزشی/'.$post->slug)}}">
                                             <figure class="image-effect">
-                                                <img src="{{asset($post->image)}}" alt="{{$post->title}}" class="img-fluid w-100">
+                                                <img src="{{asset($post->image)}}" alt="{{$post->title}}"
+                                                     class="img-fluid w-100">
                                             </figure>
                                         </a>
                                         <div class="post-type">
@@ -1078,7 +1088,7 @@
                     <div class="company-slide swiper">
                         <div class="swiper-wrapper slide-transition">
                             @foreach($customers as $customer)
-                                <div class="swiper-slide inner-slide-element">
+                                <div class="customer-slide swiper-slide inner-slide-element">
                                     <img src="{{$customer->image}}" alt="{{$customer->name}}">
                                 </div>
                             @endforeach
