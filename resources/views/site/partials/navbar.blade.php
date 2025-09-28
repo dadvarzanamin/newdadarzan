@@ -46,7 +46,7 @@
                                 </ul>
                             </li>
                         @elseif($menu->submenu == 0)
-                            <li class="nav-item"><a class="nav-link" href="{{ route('/') }}"><span>{{$menu->title}}</span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url($menu->slug) }}"><span>{{$menu->title}}</span></a></li>
                         @endif
                     @endforeach
                 </ul>

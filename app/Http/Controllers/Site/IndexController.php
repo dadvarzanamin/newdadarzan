@@ -10,8 +10,8 @@ use App\Models\Company;
 use App\Models\Consultation;
 use App\Models\Contract;
 use App\Models\Customer;
-use App\Models\Dashboard\Questionlist;
-use App\Models\Dashboard\Slide;
+use App\Models\Questionlist;
+use App\Models\Slide;
 use App\Models\Emploee;
 use App\Models\Invoice;
 use App\Models\Media;
@@ -63,17 +63,15 @@ class IndexController extends Controller
         }elseif (count($url) == 0) {
             $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword')->whereStatus(4)->whereSlug('/')->first();
         }
-
         $submenus       = Submenu::select('id', 'title', 'slug', 'menu_id')->whereStatus(4)->get();
-
         $companies      = Company::first();
-        //$servicelawyers = Submenu::select('title', 'slug', 'menu_id', 'image')->whereStatus(4)->whereMegamenu_id(4)->whereMenu_id(64)->get();
-        //$serviceclients = Submenu::select('title', 'slug', 'menu_id', 'image')->whereStatus(4)->whereMegamenu_id(5)->whereMenu_id(64)->get();
-        //$slides         = Slide::select('id', 'file_link')->whereMenu_id($thispage['id'])->whereStatus(4)->get();
         $customers      = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
         $emploees       = Emploee::whereStatus(4)->orderBy('priority')->get();
         $posts          = Post::whereStatus(4)->whereHome_show(1)->orderBy('id' , 'DESC')->limit(6)->get();
         $workshops      = Workshop::where('status', '<>' ,0)->where('id' , '!=' , 2)->OrderBy('id' , 'DESC')->limit(6)->get();
+        //$servicelawyers = Submenu::select('title', 'slug', 'menu_id', 'image')->whereStatus(4)->whereMegamenu_id(4)->whereMenu_id(64)->get();
+        //$serviceclients = Submenu::select('title', 'slug', 'menu_id', 'image')->whereStatus(4)->whereMegamenu_id(5)->whereMenu_id(64)->get();
+        //$slides         = Slide::select('id', 'file_link')->whereMenu_id($thispage['id'])->whereStatus(4)->get();
         //$currentws      = Workshop::whereStatus(4)->where('id' , '!=' , 2)->first();
         //$akhbars        = Akhbar::leftjoin('users', 'akhbars.user_id', '=', 'users.id')->
         //select('akhbars.title', 'akhbars.slug', 'akhbars.image', 'akhbars.description', 'users.name as username', 'akhbars.matn as matn', 'akhbars.updated_at')->where('akhbars.status', 4)->where('akhbars.home_show', 1)->get();
@@ -273,8 +271,6 @@ class IndexController extends Controller
 
     }
 
-
-
     public function about(Request $request){
         $url = $request->segments();
         $menus        = Menu::select('id' , 'title' , 'slug' , 'submenu' , 'priority' , 'mega_menu')->MenuSite()->orderBy('priority')->get();
@@ -329,54 +325,49 @@ class IndexController extends Controller
 
     public function emploeeresume(Request $request , $name){
         $url = $request->segments();
-        $menus        = Menu::select('id' , 'title' , 'slug' , 'submenu' , 'priority' , 'mega_menu')->MenuSite()->orderBy('priority')->get();
+        $menus = Menu::select('id', 'title', 'slug', 'submenu', 'priority')->orderBy('priority')->whereStatus(4)->get();
         if (count($url) == 1) {
-            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->MenuSite()->whereSlug($url[0])->first();
+            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword')->whereStatus(4)->whereSlug($url[0])->first();
         } elseif (count($url) > 1) {
-            $thispage = Submenu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->whereSlug($url[1])->first();
+            $thispage = Submenu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword')->whereStatus(4)->whereSlug($url[1])->first();
         }elseif (count($url) == 0) {
-            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->MenuSite()->whereSlug('/')->first();
+            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword')->whereStatus(4)->whereSlug('/')->first();
         }
-        $megacounts = mega_menu::selectRaw('COUNT(*) as count, menu_id')
-            ->groupBy('menu_id')
-            ->get()
-            ->toArray();
-        $servicelawyers = Submenu::select('title', 'slug', 'menu_id', 'image', 'megamenu_id')->whereStatus(4)->whereMegamenu_id(4)->whereMenu_id(64)->get();
-        $megamenus          = mega_menu::all();
-        $submenus           = Submenu::select('title' , 'slug' , 'menu_id' , 'megamenu_id')->whereStatus(4)->get();
-        $companies          = Company::first();
+        $submenus       = Submenu::select('id', 'title', 'slug', 'menu_id')->whereStatus(4)->get();
+        $companies      = Company::first();
+        $customers      = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
+        $emploees       = Emploee::whereStatus(4)->orderBy('priority')->get();
+        $posts          = Post::whereStatus(4)->whereHome_show(1)->orderBy('id' , 'DESC')->limit(6)->get();
+        $workshops      = Workshop::where('status', '<>' ,0)->where('id' , '!=' , 2)->OrderBy('id' , 'DESC')->limit(6)->get();
         $emploees           = Emploee::whereSlug($name)->first();
         return view('Site.partner-details')
-            ->with(compact('menus','thispage' ,'servicelawyers', 'companies' ,'emploees' , 'submenus'  , 'megacounts' , 'megamenus'));
+            ->with(compact('menus','thispage' , 'companies' ,'emploees' , 'submenus'));
     }
 
     public function questionlist(Request $request){
         $url = $request->segments();
-        $menus        = Menu::select('id' , 'title' , 'slug' , 'submenu' , 'priority' , 'mega_menu')->MenuSite()->orderBy('priority')->get();
+        $menus = Menu::select('id', 'title', 'slug', 'submenu', 'priority')->orderBy('priority')->whereStatus(4)->get();
         if (count($url) == 1) {
-            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->MenuSite()->whereSlug($url[0])->first();
+            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword')->whereStatus(4)->whereSlug($url[0])->first();
         } elseif (count($url) > 1) {
-            $thispage = Submenu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->whereSlug($url[1])->first();
+            $thispage = Submenu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword')->whereStatus(4)->whereSlug($url[1])->first();
         }elseif (count($url) == 0) {
-            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->MenuSite()->whereSlug('/')->first();
+            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword')->whereStatus(4)->whereSlug('/')->first();
         }
-        $servicelawyers = Submenu::select('title', 'slug', 'menu_id', 'image', 'megamenu_id')->whereStatus(4)->whereMegamenu_id(4)->whereMenu_id(64)->get();
-        $megacounts         = mega_menu::selectRaw('COUNT(*) as count, menu_id')->groupBy('menu_id')->get()->toArray();
-        $submenus           = Submenu::select('title' , 'slug' , 'menu_id' , 'megamenu_id')->whereStatus(4)->get();
-        $submenuquestions   = Submenu::select('id' , 'title')->whereStatus(4)->where('menu_id' ,'!=' , 65)->get();
-        $services           = Submenu::select('title' , 'slug' , 'menu_id' , 'image')->whereStatus(4)->whereMenu_id(64)->get();
-        $slides             = Slide::select('id', 'file_link')->whereMenu_id($thispage['id'])->whereStatus(4)->first();
-        $customers          = Customer::select('name' , 'image')->whereStatus(4)->whereHome_show(1)->get();
+        $submenus       = Submenu::select('id', 'title', 'slug', 'menu_id')->whereStatus(4)->get();
+        $companies      = Company::first();
+        $customers      = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
+        $emploees       = Emploee::whereStatus(4)->orderBy('priority')->get();
+        $posts          = Post::whereStatus(4)->whereHome_show(1)->orderBy('id' , 'DESC')->limit(6)->get();
+        $workshops      = Workshop::where('status', '<>' ,0)->where('id' , '!=' , 2)->OrderBy('id' , 'DESC')->limit(6)->get();
         $questionlists      = Questionlist::Filter()->paginate(25);
-        $megamenus          = mega_menu::all();
-        $companies          = Company::first();
 
         if ($request->ajax()) {
             return response()->json(['data' => $questionlists]);
         }
 
-        return view('Site.questionlist')
-            ->with(compact('menus','thispage' , 'companies' , 'slides' , 'customers' , 'submenus' , 'services' , 'megacounts' , 'megamenus' , 'questionlists' , 'submenuquestions', 'servicelawyers'));
+        return view('site.pages.questionlist')
+            ->with(compact('menus','thispage' , 'companies' , 'customers' , 'submenus' , 'questionlists'));
     }
 
     public function akhbar(Request $request)
@@ -534,6 +525,7 @@ class IndexController extends Controller
 
     public function singleworkshop(Request $request , $slug)
     {
+        dd('singleworkshop');
         $url = $request->segments();
         $menus = Menu::select('id', 'title', 'slug', 'submenu', 'priority', 'mega_menu')->MenuSite()->orderBy('priority')->get();
         if (count($url) == 1) {
@@ -644,27 +636,24 @@ class IndexController extends Controller
     public function singlepost(Request $request , $slug)
     {
         $url = $request->segments();
-        $menus = Menu::select('id', 'title', 'slug', 'submenu', 'priority', 'mega_menu')->MenuSite()->orderBy('priority')->get();
+        $menus = Menu::select('id', 'title', 'slug', 'submenu', 'priority')->orderBy('priority')->whereStatus(4)->get();
         if (count($url) == 1) {
-            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->MenuSite()->whereSlug($url[0])->first();
-        } else {
-            $thispage = Submenu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->whereSlug('اخبار')->first();
+            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword')->whereStatus(4)->whereSlug($url[0])->first();
+        } elseif (count($url) > 1) {
+            $thispage = Submenu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword')->whereStatus(4)->whereSlug($url[1])->first();
+        }elseif (count($url) == 0) {
+            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword')->whereStatus(4)->whereSlug('/')->first();
         }
-        $megacounts = mega_menu::selectRaw('COUNT(*) as count, menu_id')
-            ->groupBy('menu_id')
-            ->get()
-            ->toArray();
-        $megamenus      = mega_menu::all();
+        $submenus       = Submenu::select('id', 'title', 'slug', 'menu_id')->whereStatus(4)->get();
         $companies      = Company::first();
-        $servicelawyers = Submenu::select('title', 'slug', 'menu_id', 'image', 'megamenu_id')->whereStatus(4)->whereMegamenu_id(4)->whereMenu_id(64)->get();
-        $submenus       = Submenu::select('title', 'slug', 'menu_id', 'megamenu_id')->whereStatus(4)->get();
-        $services       = Submenu::select('title', 'slug', 'menu_id', 'image')->whereStatus(4)->whereMenu_id(64)->get();
-        $slides         = Slide::select('id', 'file_link')->whereMenu_id($thispage['id'])->whereStatus(4)->first();
         $customers      = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
+        $emploees       = Emploee::whereStatus(4)->orderBy('priority')->get();
+        $posts          = Post::whereStatus(4)->whereHome_show(1)->orderBy('id' , 'DESC')->limit(6)->get();
+        $workshops      = Workshop::where('status', '<>' ,0)->where('id' , '!=' , 2)->OrderBy('id' , 'DESC')->limit(6)->get();
         $posts          = Post::leftjoin('users', 'posts.user_id', '=', 'posts.id')->
         select('posts.title', 'posts.image', 'posts.description', 'posts.file' ,'posts.aparat' ,  'users.name as username', 'posts.updated_at', 'posts.keyword')->where('posts.status', 4)->where('posts.slug', $slug)->first();
 
-        return view('Site.singleposts')->with(compact('menus', 'thispage', 'companies', 'slides', 'customers', 'submenus', 'services', 'megacounts', 'megamenus', 'posts', 'servicelawyers'));
+        return view('site.pages.single-post')->with(compact('menus', 'thispage', 'companies', 'customers', 'submenus', 'posts'));
     }
 
     public function term(Request $request)
@@ -812,27 +801,22 @@ class IndexController extends Controller
 
     public function contract(Request $request){
         $url = $request->segments();
-        $menus = Menu::select('id', 'title', 'slug', 'submenu', 'priority', 'mega_menu')->MenuSite()->orderBy('priority')->get();
+        $menus = Menu::select('id', 'title', 'slug', 'submenu', 'priority')->orderBy('priority')->whereStatus(4)->get();
         if (count($url) == 1) {
-            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->MenuSite()->whereSlug($url[0])->first();
+            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword')->whereStatus(4)->whereSlug($url[0])->first();
         } elseif (count($url) > 1) {
-            $thispage = Submenu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->whereSlug($url[1])->first();
+            $thispage = Submenu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword')->whereStatus(4)->whereSlug($url[1])->first();
         }elseif (count($url) == 0) {
-            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->MenuSite()->whereSlug('/')->first();
+            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword')->whereStatus(4)->whereSlug('/')->first();
         }
-        $megacounts = mega_menu::selectRaw('COUNT(*) as count, menu_id')
-            ->groupBy('menu_id')
-            ->get()
-            ->toArray();
-        $megamenus = mega_menu::all();
-        $submenus = Submenu::select('id', 'title', 'slug', 'menu_id', 'megamenu_id')->whereStatus(4)->get();
+        $submenus       = Submenu::select('id', 'title', 'slug', 'menu_id')->whereStatus(4)->get();
         $companies      = Company::first();
-        $services       = Submenu::select('title', 'slug', 'menu_id', 'image')->whereStatus(4)->whereMenu_id(64)->get();
-        $servicelawyers = Submenu::select('title', 'slug', 'menu_id', 'image', 'megamenu_id')->whereStatus(4)->whereMegamenu_id(4)->whereMenu_id(64)->get();
-        $serviceclients = Submenu::select('title', 'slug', 'menu_id', 'image', 'megamenu_id')->whereStatus(4)->whereMegamenu_id(5)->whereMenu_id(64)->get();
-        $slides = Slide::select('id', 'file_link')->whereMenu_id($thispage['id'])->whereStatus(4)->get();
+        $customers      = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
+        $emploees       = Emploee::whereStatus(4)->orderBy('priority')->get();
+        $posts          = Post::whereStatus(4)->whereHome_show(1)->orderBy('id' , 'DESC')->limit(6)->get();
+        $workshops      = Workshop::where('status', '<>' ,0)->where('id' , '!=' , 2)->OrderBy('id' , 'DESC')->limit(6)->get();
         $contracts = Contract::all();
-        return view('Site.contract')->with(compact('menus' ,'thispage' , 'megacounts' , 'services' ,  'megamenus' , 'submenus' , 'companies' , 'servicelawyers' , 'serviceclients' , 'slides','contracts'));
+        return view('site.pages.contracts')->with(compact('menus' ,'thispage'   , 'submenus' , 'companies' ,'contracts'));
 
     }
 

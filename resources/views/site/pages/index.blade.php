@@ -1028,7 +1028,7 @@
                 </div>
                 <div class="col-md-4 align-self-end">
                     <div class="text-start pb-2">
-                        <a href="blog-grid.html" class="btn btn--base left-reveal">
+                        <a href="{{url('دپارتمان-اموزش-و-پژوهش/محتوای-آموزشی')}}" class="btn btn--base left-reveal">
                             مشاهده مقالات
                             <i class="flaticon-right-arrow"></i>
                         </a>

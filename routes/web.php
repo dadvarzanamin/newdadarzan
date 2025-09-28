@@ -50,6 +50,22 @@ Route::group(['namespace' => 'App\Http\Controllers' ,'prefix' => '/'] , function
 //    }
 });
 
+Route::get('/setclass'                       , [App\Http\Controllers\Site\IndexController::class, 'setclass'])           ->name('setclass');
+Route::get('/sendmail'                       , [App\Http\Controllers\Site\IndexController::class, 'sendmail'])           ->name('sendmail');
+Route::post('/getcategory'                   , [App\Http\Controllers\Site\IndexController::class, 'getcategory'])        ->name('getcategory');
+Route::post('/Consultationrequest'           , [App\Http\Controllers\Site\IndexController::class, 'Consultationrequest'])->name('Consultationrequest');
+Route::get('شرایط-ضوابط'                     , [App\Http\Controllers\Site\IndexController::class, 'terms'])              ->name('شرایط-ضوابط');
+Route::post('invoice'                        , [App\Http\Controllers\Site\IndexController::class, 'invoice'])            ->name('invoice');
+Route::get('showinvoice'                     , [App\Http\Controllers\Site\IndexController::class, 'showinvoice'])        ->name('showinvoice');
+Route::delete('invoicedestroy'               , [App\Http\Controllers\Site\IndexController::class, 'invoicedestroy'])     ->name('invoicedestroy');
+Route::get('invoicetotal'                    , [App\Http\Controllers\Site\IndexController::class, 'invoicetotal'])       ->name('invoicetotal');
+Route::get('order'                           , [App\Http\Controllers\Site\IndexController::class, 'order'])              ->name('order');
+Route::get('اخبار'.'/'.'{slug}'              , [App\Http\Controllers\Site\IndexController::class, 'singleakhbar']);
+Route::get('نمونه-قراردادها'.'/'.'{slug}'    , [App\Http\Controllers\Site\IndexController::class, 'singlecontract']);
+Route::get('تیم-ما'.'/'.'رزومه'.'/'.'{slug}' , [App\Http\Controllers\Site\IndexController::class, 'emploeeresume']);
+Route::get('محتوای-آموزشی'.'/'.'{slug}'      , [App\Http\Controllers\Site\IndexController::class, 'singlepost']);
+Route::get('/reload-captcha'                 , [App\Http\Controllers\Site\IndexController::class, 'reloadCaptcha']);
+Route::get('دپارتمان-اموزش-و-پژوهش/دوره-های-آموزشی'.'/'.'{slug}'   , [App\Http\Controllers\Site\IndexController::class, 'singleworkshop']);
 
 Route::middleware('admin')->namespace('App\Http\Controllers\Panel')->group(function () {
     Route::get('panel'                    , 'IndexController@index')->name('dashboard');
