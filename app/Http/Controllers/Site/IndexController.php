@@ -366,7 +366,7 @@ class IndexController extends Controller
             return response()->json(['data' => $questionlists]);
         }
 
-        return view('site.pages.questionlist')
+        return view('site.pages.faq')
             ->with(compact('menus','thispage' , 'companies' , 'customers' , 'submenus' , 'questionlists'));
     }
 

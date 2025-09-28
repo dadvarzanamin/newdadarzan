@@ -43,65 +43,33 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="accordion top-reveal" id="accordionWorking">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    تولید محتوای هوش مصنوعی چقدر طول می‌کشد؟
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show"
-                                 data-bs-parent="#accordionWorking">
-                                <div class="accordion-body">
-                                    <p>ماموریت ما این است که با بهره‌گیری از قدرت هوش مصنوعی برای تولید تصاویر خیره‌کننده و با کیفیت بالا، انقلابی در نحوه خلق تصاویر بصری ایجاد کنیم. چه یک هنرمند، طراح یا متخصص کسب و کار باشید.</p>
+                        @foreach($questionlists as $questionlist)
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading{{ $questionlist->id }}">
+                                    <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapse{{ $questionlist->id }}"
+                                            aria-expanded="false"
+                                            aria-controls="collapse{{ $questionlist->id }}">
+                                        {{ $questionlist->question }}
+                                    </button>
+                                </h2>
+                                <div id="collapse{{ $questionlist->id }}"
+                                     class="accordion-collapse collapse"
+                                     aria-labelledby="heading{{ $questionlist->id }}"
+                                     data-bs-parent="#accordionWorking">
+                                    <div class="accordion-body">
+                                        <p>{{ $questionlist->answer }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    آیا می‌توانم برای تصاویر تولید شده توسط هوش مصنوعی، استایل‌های خاصی درخواست کنم؟
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse"
-                                 data-bs-parent="#accordionWorking">
-                                <div class="accordion-body">
-                                    <p>ماموریت ما این است که با بهره‌گیری از قدرت هوش مصنوعی برای تولید تصاویر خیره‌کننده و با کیفیت بالا، انقلابی در نحوه خلق تصاویر بصری ایجاد کنیم. چه یک هنرمند، طراح یا متخصص کسب و کار باشید.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
-                                    چه فرمت‌هایی برای دانلود فایل‌ها ارائه می‌دهید؟
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse"
-                                 data-bs-parent="#accordionWorking">
-                                <div class="accordion-body">
-                                    <p>ماموریت ما این است که با بهره‌گیری از قدرت هوش مصنوعی برای تولید تصاویر خیره‌کننده و با کیفیت بالا، انقلابی در نحوه خلق تصاویر بصری ایجاد کنیم. چه یک هنرمند، طراح یا متخصص کسب و کار باشید.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="false"
-                                        aria-controls="collapseFour">
-                                    آیا محتوای تولید شده توسط هوش مصنوعی قابل تنظیم است؟
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse"
-                                 data-bs-parent="#accordionWorking">
-                                <div class="accordion-body">
-                                    <p>ماموریت ما این است که با بهره‌گیری از قدرت هوش مصنوعی برای تولید تصاویر خیره‌کننده و با کیفیت بالا، انقلابی در نحوه خلق تصاویر بصری ایجاد کنیم. چه یک هنرمند، طراح یا متخصص کسب و کار باشید.</p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
+                    @if($questionlists->hasMorePages())
+                        <div class="load-more-btn-box pt-5 text-center">
+                            <button type="button" id="loadMore" class="btn theme-btn"><i class="la la-refresh mr-1"></i> بارگذاری بیشتر</button>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -120,7 +88,7 @@
                 </div>
                 <div class="swiper-slide inner-slide-element">
                     <div class="slide-text">
-                        <img src="assets/images/shape/star.svg" alt="icon">
+                        <img src="{{asset('site/assets/images/shape/star.svg')}}" alt="icon">
                     </div>
                 </div>
                 <div class="swiper-slide inner-slide-element">
@@ -130,7 +98,7 @@
                 </div>
                 <div class="swiper-slide inner-slide-element">
                     <div class="slide-text">
-                        <img src="assets/images/shape/star.svg" alt="icon">
+                        <img src="{{asset('site/assets/images/shape/star.svg')}}" alt="icon">
                     </div>
                 </div>
                 <div class="swiper-slide inner-slide-element">
@@ -140,7 +108,7 @@
                 </div>
                 <div class="swiper-slide inner-slide-element">
                     <div class="slide-text">
-                        <img src="assets/images/shape/star.svg" alt="icon">
+                        <img src="{{asset('site/assets/images/shape/star.svg')}}" alt="icon">
                     </div>
                 </div>
                 <div class="swiper-slide inner-slide-element">
@@ -150,12 +118,12 @@
                 </div>
                 <div class="swiper-slide inner-slide-element">
                     <div class="slide-text">
-                        <img src="assets/images/shape/star.svg" alt="icon">
+                        <img src="{{asset('site/assets/images/shape/star.svg')}}" alt="icon">
                     </div>
                 </div>
                 <div class="swiper-slide inner-slide-element">
                     <div class="slide-text">
-                        <img src="assets/images/shape/star.svg" alt="icon">
+                        <img src="{{asset('site/assets/images/shape/star.svg')}}" alt="icon">
                     </div>
                 </div>
             </div>
@@ -189,7 +157,7 @@
 
                                         <div class="user">
                                             <div class="img">
-                                                <img src="assets/images/testimonial/1.jpg" alt="user">
+                                                <img src="{{asset('assets/images/testimonial/1.jpg')}}" alt="user">
                                             </div>
                                             <div class="text">
                                                 <h4>امیرارسلان رهنما</h4>
@@ -216,7 +184,7 @@
 
                                         <div class="user">
                                             <div class="img">
-                                                <img src="assets/images/testimonial/2.jpg" alt="user">
+                                                <img src="{{asset('assets/images/testimonial/2.jpg')}}" alt="user">
                                             </div>
                                             <div class="text">
                                                 <h4>ایلیا میرزایی</h4>
@@ -243,7 +211,7 @@
 
                                         <div class="user">
                                             <div class="img">
-                                                <img src="assets/images/testimonial/1.jpg" alt="user">
+                                                <img src="{{asset('assets/images/testimonial/1.jpg')}}" alt="user">
                                             </div>
                                             <div class="text">
                                                 <h4>امیرارسلان رهنما</h4>
@@ -270,7 +238,7 @@
 
                                         <div class="user">
                                             <div class="img">
-                                                <img src="assets/images/testimonial/2.jpg" alt="user">
+                                                <img src="{{asset('assets/images/testimonial/2.jpg')}}" alt="user">
                                             </div>
                                             <div class="text">
                                                 <h4>ایلیا میرزایی</h4>
