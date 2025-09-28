@@ -28,24 +28,29 @@
                 <div class="col-lg-8">
                     <div class="footer-widget__content ps-xl-5">
                         <div class="footer-widget__item">
-                            <h4>شرکت</h4>
-                            <ul class="useful-list">
-                                <li><a href="{{ route('/') }}">درباره ما</a></li>
-                                <li><a href="{{ route('/') }}">خدمات</a></li>
-                                <li><a href="{{ route('/') }}">پشتیبانی</a></li>
-                                <li><a href="{{ route('/') }}">ورود</a></li>
-                                <li><a href="{{ route('/') }}">ثبت نام</a></li>
-                            </ul>
+                            <h4>خدمات موکلین</h4>
+{{--                            <ul class="useful-list">--}}
+{{--                                @if($servicelawyers != null)--}}
+{{--                                    @foreach($servicelawyers as $servicelawyer)--}}
+{{--                                        <li>--}}
+{{--                                            <a href="{{url('خدمات/'.$servicelawyer->slug)}}">{{$servicelawyer->title}}</a>--}}
+{{--                                        </li>--}}
+{{--                                    @endforeach--}}
+{{--                                @endif--}}
+
+{{--                            </ul>--}}
                         </div>
 
                         <div class="footer-widget__item">
-                            <h4>لینک های سریع</h4>
+                            <h4>خدمات وکلا</h4>
                             <ul class="useful-list">
-                                <li><a href="{{ route('/') }}">تولید</a></li>
-                                <li><a href="{{ route('/') }}">تیم ما</a></li>
-                                <li><a href="{{ route('/') }}">قیمت گذاری ها</a></li>
-                                <li><a href="{{ route('/') }}">مقالات</a></li>
-                                <li><a href="{{ route('/') }}">تماس با ما</a></li>
+                                <li><a href="#">انواع خدمات قرادادی</a></li>
+                                <li><a href="#">انواع خدمات کیفری</a></li>
+                                <li><a href="#">انواع خدمات حقوقی</a></li>
+                                <li><a href="#">انواع خدمات شرکت ها</a></li>
+                                <li><a href="#">انواع خدمات مالیاتی</a></li>
+                                <li><a href="#">انواع خدمات ملکی</a></li>
+                                <li><a href="#">انواع خدمات بیمه ای</a></li>
                             </ul>
                         </div>
 
