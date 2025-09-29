@@ -454,9 +454,10 @@ class IndexController extends Controller
         $submenus       = Submenu::select('id', 'title', 'slug', 'menu_id')->whereStatus(4)->get();
         $companies      = Company::first();
         $services           = Submenu::select('id','title' , 'slug' , 'menu_id' , 'keyword', 'description')->whereSlug($url[1])->first();
+        $medias             = Media::select('aparat','title' , 'file_link' , 'cover')->whereStatus(4)->whereSubmenu_id($services->id)->get();
         $customers          = Customer::select('name' , 'image')->whereStatus(4)->whereHome_show(1)->get();
 
-        return view('site.pages.single-service')->with(compact('menus','thispage', 'companies' , 'customers' , 'submenus' , 'services'));
+        return view('site.pages.single-service')->with(compact('menus','thispage', 'companies','medias' , 'customers' , 'submenus' , 'services'));
 
     }
 
@@ -472,9 +473,9 @@ class IndexController extends Controller
         }
         $submenus       = Submenu::select('id', 'title', 'slug', 'menu_id')->whereStatus(4)->get();
         $services           = Submenu::select('id','title' , 'slug' , 'menu_id' , 'keyword', 'description')->whereSlug($url[1])->first();
-//        $medias             = Media::select('aparat','title' , 'file_link' , 'cover')->whereStatus(4)->whereSubmenu_id($services->id)->get();
+        $medias             = Media::select('aparat','title' , 'file_link' , 'cover')->whereStatus(4)->whereSubmenu_id($services->id)->get();
 
-        return view('site.pages.single-service')->with(compact('menus','thispage'  , 'submenus' , 'services'));
+        return view('site.pages.single-service')->with(compact('menus','thispage','medias'  , 'submenus' , 'services'));
 
     }
 
@@ -495,8 +496,10 @@ class IndexController extends Controller
         $posts          = Post::whereStatus(4)->whereHome_show(1)->orderBy('id' , 'DESC')->limit(6)->get();
         $workshops      = Workshop::where('status', '<>' ,0)->where('id' , '!=' , 2)->OrderBy('id' , 'DESC')->limit(6)->get();
         $singleworkshops = Workshop::whereSlug($slug)->first();
+        $services           = Submenu::select('id','title' , 'slug' , 'menu_id' , 'keyword', 'description')->whereSlug($url[1])->first();
+        $medias             = Media::select('aparat','title' , 'file_link' , 'cover')->whereStatus(4)->whereSubmenu_id($services->id)->get();
 
-        return view('site.pages.single-workshop')->with(compact('menus', 'thispage', 'companies', 'customers', 'submenus', 'singleworkshops'));
+        return view('site.pages.single-workshop')->with(compact('menus', 'thispage', 'companies','medias' , 'customers', 'submenus', 'singleworkshops'));
     }
 
     public function departmangharardad(Request $request){
@@ -512,9 +515,9 @@ class IndexController extends Controller
         $submenus       = Submenu::select('id', 'title', 'slug', 'menu_id')->whereStatus(4)->get();
         $companies      = Company::first();
         $services           = Submenu::select('id','title' , 'slug' , 'menu_id' , 'keyword', 'description')->whereSlug($url[1])->first();
-//        $medias             = Media::select('aparat','title' , 'file_link' , 'cover')->whereStatus(4)->whereSubmenu_id($services->id)->get();
+        $medias             = Media::select('aparat','title' , 'file_link' , 'cover')->whereStatus(4)->whereSubmenu_id($services->id)->get();
 
-        return view('site.pages.single-workshop')->with(compact('menus','thispage' ,'companies' , 'submenus' , 'services'));
+        return view('site.pages.single-workshop')->with(compact('menus','thispage' , 'medias' ,'companies' , 'submenus' , 'services'));
 
     }
 
@@ -754,28 +757,19 @@ class IndexController extends Controller
 
     public function article(Request $request){
         $url = $request->segments();
-        $menus = Menu::select('id', 'title', 'slug', 'submenu', 'priority', 'mega_menu')->MenuSite()->orderBy('priority')->get();
+        $menus = Menu::select('id', 'title', 'slug', 'submenu', 'priority')->orderBy('priority')->whereStatus(4)->get();
         if (count($url) == 1) {
-            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->MenuSite()->whereSlug($url[0])->first();
+            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword')->whereStatus(4)->whereSlug($url[0])->first();
         } elseif (count($url) > 1) {
-            $thispage = Submenu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->whereSlug($url[1])->first();
+            $thispage = Submenu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword')->whereStatus(4)->whereSlug($url[1])->first();
         }elseif (count($url) == 0) {
-            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword', 'page_description')->MenuSite()->whereSlug('/')->first();
+            $thispage = Menu::select('id', 'title', 'slug', 'tab_title', 'page_title', 'keyword')->whereStatus(4)->whereSlug('/')->first();
         }
-        $megacounts = mega_menu::selectRaw('COUNT(*) as count, menu_id')
-            ->groupBy('menu_id')
-            ->get()
-            ->toArray();
-        $megamenus = mega_menu::all();
-        $submenus = Submenu::select('id', 'title', 'slug', 'menu_id', 'megamenu_id')->whereStatus(4)->get();
+        $submenus       = Submenu::select('id', 'title', 'slug', 'menu_id')->whereStatus(4)->get();
         $companies      = Company::first();
-        $services       = Submenu::select('title', 'slug', 'menu_id', 'image')->whereStatus(4)->whereMenu_id(64)->get();
-        $servicelawyers = Submenu::select('title', 'slug', 'menu_id', 'image', 'megamenu_id')->whereStatus(4)->whereMegamenu_id(4)->whereMenu_id(64)->get();
-        $serviceclients = Submenu::select('title', 'slug', 'menu_id', 'image', 'megamenu_id')->whereStatus(4)->whereMegamenu_id(5)->whereMenu_id(64)->get();
-        $slides = Slide::select('id', 'file_link')->whereMenu_id($thispage['id'])->whereStatus(4)->get();
         $articles = Article::all();
-        return view('Site.article')->with(compact('menus' ,'thispage' , 'megacounts' , 'services' ,  'megamenus'
-            , 'submenus' , 'companies' , 'servicelawyers' , 'serviceclients' , 'slides' , 'articles'));
+
+        return view('Site.article')->with(compact('menus' ,'thispage' , 'submenus' , 'companies'  , 'articles'));
 
     }
 }
