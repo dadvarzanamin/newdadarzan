@@ -49,7 +49,7 @@
                                 <ul class="dropdown-menu fade-down">
                                     @foreach($submenus as $submenu)
                                         @if($submenu->menu_id == $menu->id)
-                                            <li><a class="dropdown-item" href="{{ url($submenu->slug) }}">{{$submenu->title}}</a></li>
+                                            <li><a class="dropdown-item" href="{{ url($menu->slug.'/'.$submenu->slug) }}">{{$submenu->title}}</a></li>
                                         @endif
                                     @endforeach
                                 </ul>
