@@ -10,7 +10,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="breadcrumb__wrapper">
-                        <h2 class="breadcrumb__title">جزئیات محصول</h2>
+                        <h2 class="breadcrumb__title">کارگاه آموزشی قراردادنویسی</h2>
                         <ul class="breadcrumb__list">
                             <li class="breadcrumb__item">
                                 <a href="index.html"> خانه</a>
@@ -19,7 +19,7 @@
                                 <i class="fa-solid fa-arrow-left"></i>
                             </li>
                             <li class="breadcrumb__item">
-                                <span class="breadcrumb__item-text"> جزئیات محصول</span>
+                                <span class="breadcrumb__item-text"> اطلاعات کارگاه</span>
                             </li>
                         </ul>
                     </div>
@@ -34,51 +34,77 @@
     <section class="product-details-section py-120">
         <div class="container">
             <div class="row row-gap-5 justify-content-between">
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <div class="product-image">
                         <div class="swiper details-list">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="assets/images/product/prod1.jpg" alt="product">
+                                    <img src="{{asset('site/assets/images/product/prod1.jpg')}}" alt="product">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="assets/images/product/prod2.jpg" alt="product">
+                                    <img src="{{asset('site/assets/images/product/prod2.jpg')}}" alt="product">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="assets/images/product/prod3.jpg" alt="product">
+                                    <img src="{{asset('site/assets/images/product/prod3.jpg')}}" alt="product">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="assets/images/product/prod4.jpg" alt="product">
+                                    <img src="{{asset('site/assets/images/product/prod4.jpg')}}" alt="product">
                                 </div>
                             </div>
                         </div>
                         <div class="swiper details-main">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="assets/images/product/prod1.jpg" alt="product">
+                                    <img src="{{asset('site/assets/images/product/prod1.jpg')}}" alt="product">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="assets/images/product/prod2.jpg" alt="product">
+                                    <img src="{{asset('site/assets/images/product/prod2.jpg')}}" alt="product">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="assets/images/product/prod3.jpg" alt="product">
+                                    <img src="{{asset('site/assets/images/product/prod3.jpg')}}" alt="product">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="assets/images/product/prod4.jpg" alt="product">
+                                    <img src="{{asset('site/assets/images/product/prod4.jpg')}}" alt="product">
                                 </div>
                             </div>
                             <div class="swiper-button-next"></div>
                             <div class="swiper-button-prev"></div>
                         </div>
                     </div>
+                    <div class="product-details-content">
+
+                        <h3>ویژگی های دوره</h3>
+                        <div class="divider"><span></span></div>
+                        <ul class="generic-list-item generic-list-item-flash">
+                            <li class="d-flex align-items-center justify-content-between">
+                                <span>
+                                    <i class="mr-2 text-color"></i>مدت زمان</span>
+                                {{$singleworkshops->duration}}
+                                ساعت
+                            </li>
+                            <li class="d-flex align-items-center justify-content-between">
+                                <span>
+                                    <i class="mr-2 text-color"></i>نوع برگزاری : </span>
+                                {{implode("," , json_decode($singleworkshops->type))}}
+                            </li>
+                            <li class="d-flex align-items-center justify-content-between">
+                                <span><i class="mr-2 text-color"></i>آزمون ورودی : </span> ندارد
+                            </li>
+                            <li class="d-flex align-items-center justify-content-between">
+                                <span><i class="mr-2 text-color"></i>سطح مهارت</span>{{$singleworkshops->level}}
+                            </li>
+                        </ul>
+
+
+                    </div>
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-7">
                     <div class="product-details-content">
                         <div class="d-flex flex-wrap gap-4 justify-content-between align-items-center">
-                            <h2>پرامپت طرح سه بعدی</h2>
+                            <h2>کارگاه آموزشی قراردادنویسی</h2>
                             <button class="fs-25 text-white"><i class="fa-regular fa-heart"></i></button>
                         </div>
-                        <p class="fs-14 pt-1 pb-4"><span>⛵ میدجرنی</span></p>
+                        <p class="fs-14 pt-1 pb-4"><span>دپارتمان آموزشی دادورزان امین</span></p>
                         <div class="d-flex flex-wrap gap-4 pb-2 justify-content-between align-items-center">
                             <div class="d-flex gap-4">
                                 <a class="detaisl-meta" href="javascript:void(0)">
@@ -103,20 +129,21 @@
                         <hr>
                         <div class="d-flex flex-wrap gap-4 justify-content-between align-items-center">
                             <div class="creator-profile">
-                                <h6 class="pb-3">سازنده</h6>
+                                <h6 class="pb-3">مدرس </h6>
                                 <div class="d-flex gap-2 align-items-center">
-                                    <img src="assets/images/team/1.jpg" alt="creator user" class="creator-img">
-                                    <span class="text-white fs-16 fw-semibold">مهسا</span>
+                                    <img src="{{asset('site/assets/images/team/1.jpg')}}" alt="creator user"
+                                         class="creator-img">
+                                    <span class="text-black fs-16 fw-semibold">دکتر علی اکبرزاده</span>
                                 </div>
                             </div>
                             <div class="rating ms-2">
                                 <h6 class="text-end pb-3">نمره</h6>
                                 <div class="text-warning">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
                                     <i class="fas fa-star-half-alt"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
                                     <span class="ms-1">
                                             4.5
                                         </span>
@@ -124,8 +151,8 @@
                             </div>
                         </div>
                         <div class="pricing-det pt-5">
-                            <h6 class="pb-2">قیمت گذاری ها</h6>
-                            <h4>۱۰۰۰تومان</h4>
+                            <h6 class="pb-2">قیمت</h6>
+                            <h4>3,600,000تومان</h4>
                         </div>
                         <div class="product-content">
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -133,7 +160,7 @@
                                     <button class="nav-link active" id="pills-details-tab" data-bs-toggle="pill"
                                             data-bs-target="#pills-details" type="button" role="tab"
                                             aria-controls="pills-details" aria-selected="true">
-                                        جزئیات
+                                        اهداف دوره
                                     </button>
                                 </li>
                                 <li class="nav-item" role="presentation">
@@ -147,44 +174,36 @@
                                     <button class="nav-link" id="pills-reviews-tab" data-bs-toggle="pill"
                                             data-bs-target="#pills-reviews" type="button" role="tab"
                                             aria-controls="pills-reviews" aria-selected="false">
-                                        دیدگاه ها
+                                        رزومه مدرس
                                     </button>
                                 </li>
                             </ul>
+                            @php
+                                $lines = explode("\n", $singleworkshops->target);
+                            @endphp
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-details" role="tabpanel"
                                      aria-labelledby="pills-details-tab" tabindex="0">
                                     <h6 class="mb-2">دسته بندی</h6>
                                     <p>تصاویر</p>
+                                    <h3 class="fs-24 font-weight-semi-bold pb-3">اهداف دوره</h3>
+                                    <ul>
+                                        @foreach ($lines as $line)
+                                            <li class="generic-list-item overview-list-item">{!! $line !!}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                                 <div class="tab-pane fade" id="pills-description" role="tabpanel"
                                      aria-labelledby="pills-description-tab" tabindex="0">
-                                    <p>با استفاده از هر ایده‌ای که در ذهن دارید، طرح‌های مفهومی منحصر به فرد برای برنامه ایجاد می‌کند!
-
-                                        این راهنما شامل ایده‌های زیادی برای ایجاد طرح‌های مفهومی منحصر به فرد برای برنامه خواهد بود!
-
-                                        با نسخه ۵.۲ ساخته شده است
-
-                                        برای عکس‌های پروفایل، کتاب داستان، چاپ هنری، هدایا، هنرهای مفهومی و برای
-
-                                        خوشگذرانی عالی است</p>
+                                    {!! $singleworkshops->description !!}
                                 </div>
                                 <div class="tab-pane fade" id="pills-reviews" role="tabpanel"
                                      aria-labelledby="pills-reviews-tab" tabindex="0">
                                     <div class="rating d-flex gap-4 ms-2">
-                                        <h6 class="pb-2">ثبت نمره :</h6>
-                                        <div class="text-warning">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                            <span class="ms-1">
-                                                    4.5
-                                                </span>
-                                        </div>
+                                        <h6 class="pb-2">سوابق و مدارک
+                                        </h6>
+                                        {!! $singleworkshops->teacher_resume !!}
                                     </div>
-                                    <textarea name="message" rows="5" placeholder="پیام خود را بنویسید.."></textarea>
                                 </div>
                             </div>
                             <div class="product-details-footer d-flex flex-wrap gap-4 mt-4 ">

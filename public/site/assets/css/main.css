@@ -4341,6 +4341,7 @@ button.btn-close {
 
 .navbar-brand {
   margin-left: 0;
+  max-width: 60px;
 }
 
 body,
@@ -10844,13 +10845,16 @@ label {
 .navbar-main.navbar-shrink {
   -webkit-backdrop-filter: blur(50px);
   backdrop-filter: blur(50px);
+
   background: hsl(var(--section-bg));
   padding: 8px 0;
+  border-bottom: 1px solid hsl(var(--black-eight));
 }
 
 @media screen and (max-width: 991px) {
   .navbar-main .logo-img {
     height: 40px;
+    width: 40px;
   }
 }
 
