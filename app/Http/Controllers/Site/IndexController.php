@@ -472,9 +472,9 @@ class IndexController extends Controller
         }
         $submenus       = Submenu::select('id', 'title', 'slug', 'menu_id')->whereStatus(4)->get();
         $services           = Submenu::select('id','title' , 'slug' , 'menu_id' , 'keyword', 'description')->whereSlug($url[1])->first();
-        $medias             = Media::select('aparat','title' , 'file_link' , 'cover')->whereStatus(4)->whereSubmenu_id($services->id)->get();
+//        $medias             = Media::select('aparat','title' , 'file_link' , 'cover')->whereStatus(4)->whereSubmenu_id($services->id)->get();
 
-        return view('site.pages.single-service')->with(compact('menus','thispage' ,'medias' , 'submenus' , 'services'));
+        return view('site.pages.single-service')->with(compact('menus','thispage'  , 'submenus' , 'services'));
 
     }
 
