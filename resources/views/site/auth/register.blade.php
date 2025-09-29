@@ -13,11 +13,11 @@
                                 <div class="login-img-box ms-lg-5">
                                     <div class="login-img">
                                         <figure class="image-effect right-reveal">
-                                            <img src="{{ asset('site/assets/images/call-to-action/1.jpg') }}" alt="action images" class="img-fluid w-100">
+                                            <img src="{{ asset('site/assets/images/auth/Login-rafiki.svg') }}" alt="action images" class="img-fluid w-100">
                                         </figure>
-                                        <figure class="image-effect left-reveal">
-                                            <img src="{{ asset('site/assets/images/call-to-action/2.jpg') }}" alt="action images" class="img-fluid w-100">
-                                        </figure>
+{{--                                        <figure class="image-effect left-reveal">--}}
+{{--                                            <img src="{{ asset('site/assets/images/call-to-action/2.jpg') }}" alt="action images" class="img-fluid w-100">--}}
+{{--                                        </figure>--}}
                                     </div>
                                     <div class="text-center mt-4">
                                         <span>اکانت خود را بسازید</span>
