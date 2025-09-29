@@ -37,8 +37,6 @@
                     <div class="d-grid row-gap-5">
                         <div class="blog-details-content">
                             {!! $services->description !!}
-                        </div>
-                        <div class="blog-details-content">
                             @foreach($medias as $media)
                                 <div class="card-image m-3">
                                     @if($media->file_link)
@@ -52,15 +50,13 @@
                                 </div>
                             @endforeach
                         </div>
+
                         <div class="blogs-tags">
                             <p>
                                 <strong>برچسب ها :</strong>
                                 @if($services['keyword'])
                                     @foreach (json_decode($services['keyword']) as $item)
-                                        <li class="mr-2">
-                                            <a href="#">{{$item}}</a>
-                                            <a href="#">{{$item}}،</a>
-                                        </li>
+                                        <a href="#">{{$item}}،</a>
                                     @endforeach
                                 @endif
                             </p>
@@ -91,7 +87,8 @@
                             <h4>۳ کامنت</h4>
                             <div class="comment-item">
                                 <figure class="image-effect">
-                                    <img src="{{asset('site/assets/images/testimonial/1.jpg')}}" alt="author" class="img-fluid w-100">
+                                    <img src="{{asset('site/assets/images/testimonial/1.jpg')}}" alt="author"
+                                         class="img-fluid w-100">
                                 </figure>
                                 <div class="text-box">
                                     <p>«تصاویر تولید شده با هوش مصنوعی کاملاً شگفت‌انگیز! سطح جزئیات و واقع‌گرایی
@@ -113,7 +110,8 @@
                             </div>
                             <div class="comment-item ms-md-5 ps-lg-5">
                                 <figure class="image-effect">
-                                    <img src="{{asset('site/assets/images/testimonial/2.jpg')}}" alt="author" class="img-fluid w-100">
+                                    <img src="{{asset('site/assets/images/testimonial/2.jpg')}}" alt="author"
+                                         class="img-fluid w-100">
                                 </figure>
                                 <div class="text-box">
                                     <p>«تصاویر تولید شده با هوش مصنوعی کاملاً شگفت‌انگیز! سطح جزئیات و واقع‌گرایی
@@ -135,7 +133,8 @@
                             </div>
                             <div class="comment-item">
                                 <figure class="image-effect">
-                                    <img src="{{asset('site/assets/images/testimonial/3.jpg')}}" alt="author" class="img-fluid w-100">
+                                    <img src="{{asset('site/assets/images/testimonial/3.jpg')}}" alt="author"
+                                         class="img-fluid w-100">
                                 </figure>
                                 <div class="text-box">
                                     <p>«تصاویر تولید شده با هوش مصنوعی کاملاً شگفت‌انگیز! سطح جزئیات و واقع‌گرایی
@@ -192,146 +191,142 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <div class="sidebar-item">
-                                <h5>دسته بندی</h5>
-                                <ul class="category-file">
-                                    <li>
-                                        <a href="blog-details.html">
-                                                <span class="category-title">
-                                                    <i class="fa-regular fa-folder-closed"></i>
-                                                    انتزاعی
-                                                </span>
-                                            <span class="number">(18) </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-details.html">
-                                                <span class="category-title">
-                                                    <i class="fa-regular fa-folder-closed"></i>
-                                                    فانتزی
-                                                </span>
-                                            <span class="number">(12) </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-details.html">
-                                                <span class="category-title">
-                                                    <i class="fa-regular fa-folder-closed"></i>
-                                                    پرتره
-                                                </span>
-                                            <span class="number">(16) </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-details.html">
-                                                <span class="category-title">
-                                                    <i class="fa-regular fa-folder-closed"></i>
-                                                    طبیعت
-                                                </span>
-                                            <span class="number">(08) </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-details.html">
-                                                <span class="category-title">
-                                                    <i class="fa-regular fa-folder-closed"></i>
-                                                    حیوانات
-                                                </span>
-                                            <span class="number">(20) </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-details.html">
-                                                <span class="category-title">
-                                                    <i class="fa-regular fa-folder-closed"></i>
-                                                    کسب و کار
-                                                </span>
-                                            <span class="number">(14) </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-details.html">
-                                                <span class="category-title">
-                                                    <i class="fa-regular fa-folder-closed"></i>
-                                                    محصولات
-                                                </span>
-                                            <span class="number">(17) </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-details.html">
-                                                <span class="category-title">
-                                                    <i class="fa-regular fa-folder-closed"></i>
-                                                    تکنولوژی
-                                                </span>
-                                            <span class="number">(15) </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="sidebar-item">
-                                <h5>مقالات اخیر</h5>
-                                <div class="recent-post">
-                                    <div class="recent-post__item">
-                                        <figure class="img image-effect">
-                                            <img src="assets/images/blog/r1.jpg" alt="blog img">
-                                        </figure>
-                                        <div class="text">
-                                            <div class="date">۲۳ اردیبهشت ۱۴۰۴</div>
-                                            <h6><a href="blog-details.html">ظهور هنر هوش مصنوعی: چگونه ماشین‌ها خلاقیت
-                                                    را از نو تعریف می‌کنند</a>
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div class="recent-post__item">
-                                        <figure class="img image-effect">
-                                            <img src="assets/images/blog/r2.jpg" alt="blog img">
-                                        </figure>
-                                        <div class="text">
-                                            <div class="date">۱۷ خرداد ۱۴۰۴</div>
-                                            <h6><a href="blog-details.html">چگونه کسب‌وکارها از تصاویر تولید شده توسط
-                                                    هوش مصنوعی استفاده می‌کنند</a></h6>
-                                        </div>
-                                    </div>
-                                    <div class="recent-post__item">
-                                        <figure class="img image-effect">
-                                            <img src="assets/images/blog/r3.jpg" alt="blog img">
-                                        </figure>
-                                        <div class="text">
-                                            <div class="date">۲۲ فروردین ۱۴۰۴</div>
-                                            <h6><a href="blog-details.html">بهترین سبک‌های تصویر هوش مصنوعی برای امتحان
-                                                    کردن در پروژه بعدی شما</a></h6>
-                                        </div>
-                                    </div>
-                                    <div class="recent-post__item">
-                                        <figure class="img image-effect">
-                                            <img src="assets/images/blog/r4.jpg" alt="blog img">
-                                        </figure>
-                                        <div class="text">
-                                            <div class="date">۲۵ تیر ۱۴۰۴</div>
-                                            <h6><a href="blog-details.html">مناظر تولید شده توسط هوش مصنوعی، عصر جدیدی
-                                                    از مناظر دیجیتال</a></h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+{{--                        <div class="col-12">--}}
+{{--                            <div class="sidebar-item">--}}
+{{--                                <h5>دسته بندی</h5>--}}
+{{--                                <ul class="category-file">--}}
+{{--                                    <li>--}}
+{{--                                        <a href="blog-details.html">--}}
+{{--                                                <span class="category-title">--}}
+{{--                                                    <i class="fa-regular fa-folder-closed"></i>--}}
+{{--                                                    انتزاعی--}}
+{{--                                                </span>--}}
+{{--                                            <span class="number">(18) </span>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="blog-details.html">--}}
+{{--                                                <span class="category-title">--}}
+{{--                                                    <i class="fa-regular fa-folder-closed"></i>--}}
+{{--                                                    فانتزی--}}
+{{--                                                </span>--}}
+{{--                                            <span class="number">(12) </span>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="blog-details.html">--}}
+{{--                                                <span class="category-title">--}}
+{{--                                                    <i class="fa-regular fa-folder-closed"></i>--}}
+{{--                                                    پرتره--}}
+{{--                                                </span>--}}
+{{--                                            <span class="number">(16) </span>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="blog-details.html">--}}
+{{--                                                <span class="category-title">--}}
+{{--                                                    <i class="fa-regular fa-folder-closed"></i>--}}
+{{--                                                    طبیعت--}}
+{{--                                                </span>--}}
+{{--                                            <span class="number">(08) </span>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="blog-details.html">--}}
+{{--                                                <span class="category-title">--}}
+{{--                                                    <i class="fa-regular fa-folder-closed"></i>--}}
+{{--                                                    حیوانات--}}
+{{--                                                </span>--}}
+{{--                                            <span class="number">(20) </span>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="blog-details.html">--}}
+{{--                                                <span class="category-title">--}}
+{{--                                                    <i class="fa-regular fa-folder-closed"></i>--}}
+{{--                                                    کسب و کار--}}
+{{--                                                </span>--}}
+{{--                                            <span class="number">(14) </span>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="blog-details.html">--}}
+{{--                                                <span class="category-title">--}}
+{{--                                                    <i class="fa-regular fa-folder-closed"></i>--}}
+{{--                                                    محصولات--}}
+{{--                                                </span>--}}
+{{--                                            <span class="number">(17) </span>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="blog-details.html">--}}
+{{--                                                <span class="category-title">--}}
+{{--                                                    <i class="fa-regular fa-folder-closed"></i>--}}
+{{--                                                    تکنولوژی--}}
+{{--                                                </span>--}}
+{{--                                            <span class="number">(15) </span>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-12">--}}
+{{--                            <div class="sidebar-item">--}}
+{{--                                <h5>مقالات اخیر</h5>--}}
+{{--                                <div class="recent-post">--}}
+{{--                                    <div class="recent-post__item">--}}
+{{--                                        <figure class="img image-effect">--}}
+{{--                                            <img src="assets/images/blog/r1.jpg" alt="blog img">--}}
+{{--                                        </figure>--}}
+{{--                                        <div class="text">--}}
+{{--                                            <div class="date">۲۳ اردیبهشت ۱۴۰۴</div>--}}
+{{--                                            <h6><a href="blog-details.html">ظهور هنر هوش مصنوعی: چگونه ماشین‌ها خلاقیت--}}
+{{--                                                    را از نو تعریف می‌کنند</a>--}}
+{{--                                            </h6>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="recent-post__item">--}}
+{{--                                        <figure class="img image-effect">--}}
+{{--                                            <img src="assets/images/blog/r2.jpg" alt="blog img">--}}
+{{--                                        </figure>--}}
+{{--                                        <div class="text">--}}
+{{--                                            <div class="date">۱۷ خرداد ۱۴۰۴</div>--}}
+{{--                                            <h6><a href="blog-details.html">چگونه کسب‌وکارها از تصاویر تولید شده توسط--}}
+{{--                                                    هوش مصنوعی استفاده می‌کنند</a></h6>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="recent-post__item">--}}
+{{--                                        <figure class="img image-effect">--}}
+{{--                                            <img src="assets/images/blog/r3.jpg" alt="blog img">--}}
+{{--                                        </figure>--}}
+{{--                                        <div class="text">--}}
+{{--                                            <div class="date">۲۲ فروردین ۱۴۰۴</div>--}}
+{{--                                            <h6><a href="blog-details.html">بهترین سبک‌های تصویر هوش مصنوعی برای امتحان--}}
+{{--                                                    کردن در پروژه بعدی شما</a></h6>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="recent-post__item">--}}
+{{--                                        <figure class="img image-effect">--}}
+{{--                                            <img src="assets/images/blog/r4.jpg" alt="blog img">--}}
+{{--                                        </figure>--}}
+{{--                                        <div class="text">--}}
+{{--                                            <div class="date">۲۵ تیر ۱۴۰۴</div>--}}
+{{--                                            <h6><a href="blog-details.html">مناظر تولید شده توسط هوش مصنوعی، عصر جدیدی--}}
+{{--                                                    از مناظر دیجیتال</a></h6>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                         <div class="col-12">
                             <div class="sidebar-item">
                                 <h5>برچسب ها</h5>
                                 <div class="tags-list">
-                                    <a href="blog-grid.html">هوش‌مصنوعی خلاق</a>
-                                    <a href="blog-grid.html">استایل هوش‌مصنوعی</a>
-                                    <a href="blog-grid.html">نوآوری هوش‌مصنوعی</a>
-                                    <a href="blog-grid.html">عکس هوش‌مصنوعی</a>
-                                    <a href="blog-grid.html">آثار هنری هوش‌مصنوعی</a>
-                                    <a href="blog-grid.html">قدرت‌گرفته از هوش‌مصنوعی</a>
-                                    <a href="blog-grid.html">تولیدشده با هوش‌مصنوعی</a>
-                                    <a href="blog-grid.html">تصویر هوش‌مصنوعی</a>
-                                    <a href="blog-grid.html">هنر هوش‌مصنوعی</a>
+                                    @if($services['keyword'])
+                                        @foreach (json_decode($services['keyword']) as $item)
+                                            <a href="#">{{$item}}</a>
+                                        @endforeach
+                                    @endif
                                 </div>
                             </div>
                         </div>

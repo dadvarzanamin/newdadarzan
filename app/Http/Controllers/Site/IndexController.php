@@ -145,7 +145,7 @@ class IndexController extends Controller
             )
             ->get();
 //dd($invoices);
-        return view('Site.invoice')->with(compact('menus', 'thispage' , 'companies','invoices', 'customers', 'submenus', 'servicelawyers', 'serviceclients', 'megamenus', 'megacounts', 'emploees'));
+        return view('Site.pages.cart')->with(compact('menus', 'thispage' , 'companies','invoices', 'customers', 'submenus', 'servicelawyers', 'serviceclients', 'megamenus', 'megacounts', 'emploees'));
 
     }
 
@@ -192,7 +192,7 @@ class IndexController extends Controller
             ELSE null END as product_name")
             )
             ->get();
-        return view('Site.invoice')->with(compact('menus', 'thispage' , 'companies','invoices', 'customers', 'submenus', 'servicelawyers', 'serviceclients', 'megamenus', 'megacounts', 'emploees'));
+        return view('Site.pages.cart')->with(compact('menus', 'thispage' , 'companies','invoices', 'customers', 'submenus', 'servicelawyers', 'serviceclients', 'megamenus', 'megacounts', 'emploees'));
 
     }
 
@@ -517,7 +517,7 @@ class IndexController extends Controller
         $services           = Submenu::select('id','title' , 'slug' , 'menu_id' , 'keyword', 'description')->whereSlug($url[1])->first();
         $medias             = Media::select('aparat','title' , 'file_link' , 'cover')->whereStatus(4)->whereSubmenu_id($services->id)->get();
 
-        return view('site.pages.single-workshop')->with(compact('menus','thispage' , 'medias' ,'companies' , 'submenus' , 'services'));
+        return view('site.pages.single-service')->with(compact('menus','thispage' , 'medias' ,'companies' , 'submenus' , 'services'));
 
     }
 
@@ -709,7 +709,7 @@ class IndexController extends Controller
         $customers          = Customer::select('name' , 'image')->whereStatus(4)->whereHome_show(1)->get();
         $posts          = Post::whereStatus(4)->get();
 
-        return view('Site.partner-details')->with(compact('menus','thispage' , 'companies' , 'slides' , 'customers' ,'posts' ,  'submenus' , 'megacounts' , 'megamenus' , 'servicelawyers'));
+        return view('Site.pages.single-team')->with(compact('menus','thispage' , 'companies' , 'slides' , 'customers' ,'posts' ,  'submenus' , 'megacounts' , 'megamenus' , 'servicelawyers'));
 
     }
 
@@ -752,7 +752,7 @@ class IndexController extends Controller
         $customers      = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
         $contracts      = Contract::whereSlug($slug)->first();
 
-        return view('Site.singlecontract')->with(compact('menus', 'thispage', 'companies', 'slides', 'customers', 'submenus', 'services', 'megacounts', 'megamenus', 'contracts', 'servicelawyers'));
+        return view('Site.pages.single-contract')->with(compact('menus', 'thispage', 'companies', 'slides', 'customers', 'submenus', 'services', 'megacounts', 'megamenus', 'contracts', 'servicelawyers'));
     }
 
     public function article(Request $request){
@@ -769,7 +769,7 @@ class IndexController extends Controller
         $companies      = Company::first();
         $articles = Article::all();
 
-        return view('Site.article')->with(compact('menus' ,'thispage' , 'submenus' , 'companies'  , 'articles'));
+        return view('Site.pages.articles')->with(compact('menus' ,'thispage' , 'submenus' , 'companies'  , 'articles'));
 
     }
 }

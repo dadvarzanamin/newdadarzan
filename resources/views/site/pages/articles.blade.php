@@ -1,16 +1,15 @@
 @extends('site.layouts.base')
 
-@section('title', 'بلاگ های ما')
+@section('title', 'مقالات ما')
 
 @section('content')
-    <!-- ===========================
-        =====>> breadcrumb <<======= -->
+
     <section class="breadcrumb">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="breadcrumb__wrapper">
-                        <h2 class="breadcrumb__title"> سایدبار مقالات</h2>
+                        <h2 class="breadcrumb__title"> مقالات</h2>
                         <ul class="breadcrumb__list">
                             <li class="breadcrumb__item">
                                 <a href="index.html"> خانه</a>
@@ -27,40 +26,73 @@
             </div>
         </div>
     </section>
-    <!-- =====>> End breadcrumb <<=====
-    =============================== -->
-    <!-- ===========================
-    =====>> Blog <<======= -->
+
     <section class="blog-section section-one-bg py-120">
         <div class="container">
             <div class="row row-gap-5 justify-content-center">
                 <div class="col-lg-8">
                     <div class="row row-gap-5">
-                        @foreach($posts as $post)
-                            <div class="col-lg-6 col-md-6">
-                                <div class="blog-grid-item">
-                                    <div class="blog-date">
-                                        <div class="bar-icon"></div>
-                                        {{jdate($post->updated_at)->ago()}}
-                                    </div>
-                                    <a href="{{url('محتوای-آموزشی/'.$post->slug)}}">
-                                        <figure class="image-effect">
-                                            <img src="{{asset($post->image)}}" alt="blog images"
-                                                 class="img-fluid w-100">
-                                        </figure>
-                                    </a>
-                                    <div class="post-type">
-                                        دپارتمان آموزش
-                                        <div class="bar-icon2"></div>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h4>
-                                            <a href="{{url('محتوای-آموزشی/'.$post->slug)}}">{{$post->title}}</a>
-                                        </h4>
+                        @if($articles)
+                            @foreach($articles as $article)
+                                <div class="col-lg-4">
+                                    <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_1">
+                                        <div class="card-image">
+                                            <a href="{{url('دپارتمان-اموزش-و-پژوهش/دوره-های-آموزشی/'.$article->slug)}}"
+                                               class="d-block">
+                                                <img class="card-img-top img-index"
+                                                     src="{{asset('storage/'.$article->image)}}"
+                                                     alt="{{$article->title}}" style="object-fit: cover;">
+                                            </a>
+                                            <div class="course-badge-labels">
+                                                <div class="course-badge">{{jdate($article->created_at)->ago()}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title"><a
+                                                    href="{{url('دپارتمان-اموزش-و-پژوهش/دوره-های-آموزشی/'.$article->slug)}}">{{$article->title}}</a>
+                                            </h5>
+                                            <div class="line"></div>
+                                            <div
+                                                class="row rating-wrap d-flex align-items-center justify-content-between p-2 pt-3">
+                                                <p>امیرحسین زین الدینی</p>
+                                                <a href="{{url('دپارتمان-اموزش-و-پژوهش/دوره-های-آموزشی/'.$article->slug)}}"
+                                                   class="btn theme-btn theme-btn-sm theme-btn-transparent">مشاهده</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="blog-grid-item">
+                                        <div class="blog-date">
+                                            <div class="bar-icon"></div>
+                                            {{jdate($article->created_at)->ago()}}
+                                        </div>
+                                        <a href="{{url('دپارتمان-اموزش-و-پژوهش/دوره-های-آموزشی/'.$article->slug)}}">
+                                            <figure class="image-effect">
+                                                <img src="{{asset('storage/'.$article->image)}}" alt="blog images"
+                                                     class="img-fluid w-100">
+                                            </figure>
+                                        </a>
+                                        <div class="post-type">
+                                            دپارتمان آموزشی
+                                            <div class="bar-icon2"></div>
+                                        </div>
+                                        <div class="blog-content">
+                                            <h4>
+                                                <a href="{{url('دپارتمان-اموزش-و-پژوهش/دوره-های-آموزشی/'.$article->slug)}}">
+                                                    {{$article->title}}
+                                                </a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+                        <div>
+                            <h3>
+                                هنوز مقاله ای وجود ندارد!
+                            </h3>
+                        </div>
                         <div class="col-12">
                             <nav class="mt-4">
                                 <ul class="pagination justify-content-start">
