@@ -1,6 +1,6 @@
 @extends('site.layouts.base')
 
-@section('title', 'حریم خصوصی')
+@section('title', 'شرایط و ضوابط')
 
 @section('content')
 
