@@ -1,6 +1,6 @@
 @extends('site.layouts.base')
 
-@section('title', 'تیم')
+@section('title', 'اعضای تیم')
 
 @section('content')
     <!-- ===========================
@@ -37,7 +37,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                     <div class="team-item top-reveal">
                         <figure class="image-effect ">
-                            <img src="assets/images/team/1.jpg" alt="team images" class="img-fluid w-100">
+                            <img src="{{asset('site/assets/images/team/1.jpg')}}" alt="team images" class="img-fluid w-100">
                         </figure>
                         <ul class="social">
                             <li>
@@ -65,7 +65,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                     <div class="team-item top-reveal">
                         <figure class="image-effect ">
-                            <img src="assets/images/team/2.jpg" alt="team images" class="img-fluid w-100">
+                            <img src="{{asset('site/assets/images/team/2.jpg')}}" alt="team images" class="img-fluid w-100">
                         </figure>
                         <ul class="social">
                             <li>
@@ -93,7 +93,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                     <div class="team-item top-reveal">
                         <figure class="image-effect ">
-                            <img src="assets/images/team/3.jpg" alt="team images" class="img-fluid w-100">
+                            <img src="{{asset('site/assets/images/team/3.jpg')}}" alt="team images" class="img-fluid w-100">
                         </figure>
                         <ul class="social">
                             <li>
@@ -121,7 +121,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                     <div class="team-item top-reveal">
                         <figure class="image-effect ">
-                            <img src="assets/images/team/4.jpg" alt="team images" class="img-fluid w-100">
+                            <img src="{{asset('site/assets/images/team/4.jpg')}}" alt="team images" class="img-fluid w-100">
                         </figure>
                         <ul class="social">
                             <li>
@@ -149,7 +149,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                     <div class="team-item top-reveal">
                         <figure class="image-effect ">
-                            <img src="assets/images/team/5.jpg" alt="team images" class="img-fluid w-100">
+                            <img src="{{asset('site/assets/images/team/5.jpg')}}" alt="team images" class="img-fluid w-100">
                         </figure>
                         <ul class="social">
                             <li>
@@ -177,7 +177,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                     <div class="team-item top-reveal">
                         <figure class="image-effect ">
-                            <img src="assets/images/team/6.jpg" alt="team images" class="img-fluid w-100">
+                            <img src="{{asset('site/assets/images/team/6.jpg')}}" alt="team images" class="img-fluid w-100">
                         </figure>
                         <ul class="social">
                             <li>
@@ -205,7 +205,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                     <div class="team-item top-reveal">
                         <figure class="image-effect ">
-                            <img src="assets/images/team/7.jpg" alt="team images" class="img-fluid w-100">
+                            <img src="{{asset('site/assets/images/team/7.jpg')}}" alt="team images" class="img-fluid w-100">
                         </figure>
                         <ul class="social">
                             <li>
@@ -233,7 +233,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                     <div class="team-item top-reveal">
                         <figure class="image-effect ">
-                            <img src="assets/images/team/8.jpg" alt="team images" class="img-fluid w-100">
+                            <img src="{{asset('site/assets/images/team/8.jpg')}}" alt="team images" class="img-fluid w-100">
                         </figure>
                         <ul class="social">
                             <li>

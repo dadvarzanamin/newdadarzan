@@ -12868,7 +12868,7 @@ label {
 }
 
 .cart-table__header {
-  background: hsl(var(--white-five));
+  background: hsl(var(--white));
   border-radius: 5px;
   padding: 15px 25px;
 

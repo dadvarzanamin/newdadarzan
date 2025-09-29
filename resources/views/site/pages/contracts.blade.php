@@ -167,8 +167,7 @@
                             <div class="explore-item">
                                 <div class="explore-item-header d-flex align-items-center justify-content-between">
                                     <div class="explore-title">
-                                        <img src="{{asset('storage/'.$contract->image)}}" alt="user">
-                                        مهسا
+                                        <img src="{{asset('site/assets/images/logo/darklogodadvarzan.png')}}" alt="user">
                                     </div>
                                     <div class="star-list">
                                         <i class="fa-solid fa-star"></i>
@@ -181,7 +180,7 @@
                                 <div class="explore-img">
                                     <div class="featured-price">{{$contract->price == 0 ? 'رایگان' : number_format($contract->price)}}</div>
                                     <figure class="image-effect">
-                                        <img src="assets/images/explore/ex1.jpg" alt="explore images"
+                                        <img src="{{asset('storage/'.$contract->image)}}" alt="explore images"
                                              class="img-fluid w-100">
                                     </figure>
                                     <div class="heart-content">
@@ -197,7 +196,7 @@
                                         <div class="img">
                                             <img src="{{asset('storage/'.$contract->image)}}" alt="explore">
                                         </div>
-                                        میدجرنی
+                                        تیم حقوقی
                                     </div>
                                     <div class="view-list">
                                         <i class="fa-regular fa-eye"></i>
