@@ -329,7 +329,7 @@ class IndexController extends Controller
         $posts          = Post::whereStatus(4)->whereHome_show(1)->orderBy('id' , 'DESC')->limit(6)->get();
         $workshops      = Workshop::where('status', '<>' ,0)->where('id' , '!=' , 2)->OrderBy('id' , 'DESC')->limit(6)->get();
         $emploees           = Emploee::whereSlug($name)->first();
-        return view('Site.partner-details')
+        return view('Site.pages.single-team')
             ->with(compact('menus','thispage' , 'companies' ,'emploees' , 'submenus'));
     }
 
