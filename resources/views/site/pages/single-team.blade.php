@@ -12,11 +12,11 @@
                         <h2 class="breadcrumb__title mt-2">
                             {{$emploees->fullname}}
                         </h2>
-                        <ul class="breadcrumb__date">
-                            <li>ادمین</li>
-                            <li>۴ کامنت</li>
-                            <li>۱۵ تیر ۱۴۰۴</li>
-                        </ul>
+{{--                        <ul class="breadcrumb__date">--}}
+{{--                            <li>ادمین</li>--}}
+{{--                            <li>۴ کامنت</li>--}}
+{{--                            <li>۱۵ تیر ۱۴۰۴</li>--}}
+{{--                        </ul>--}}
                     </div>
                 </div>
             </div>
@@ -35,9 +35,11 @@
                                     <h4 class="">{{$item}}</h4>
                                 @endforeach
                             @endif
-                            <figure class="image-effect blog-dt-img1">
-                                <img src="{{asset($emploees->image)}}" alt="blog images" class="img-fluid w-100">
-                            </figure>
+                            <img src="{{asset($emploees->image)}}" alt="blog images">
+
+{{--                            <figure class="image-effect blog-dt-img1">--}}
+{{--                                <img src="{{asset($emploees->image)}}" alt="blog images" class="img-fluid w-100">--}}
+{{--                            </figure>--}}
                             <div class="tab-pane fade show active" id="about-me" role="tabpanel"
                                  aria-labelledby="about-me-tab">
                                 <h6>{{$emploees->position}}</h6>

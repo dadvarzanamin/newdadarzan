@@ -5,11 +5,18 @@
                 <div class="col-lg-4 col-md-8">
                     <div class="footer-widget__item text-center text-lg-end">
                         <a href="{{ route('/') }}" class="d-block">
-                            <img src="{{ asset('site/assets/images/logo/logodadvarzan.png') }}" style="max-width: 60px" alt="logo">
+                            <img src="{{ asset('site/assets/images/logo/logodadvarzan.png') }}" style="max-width: 60px"
+                                 alt="logo">
                         </a>
                         <br>
                         <p>موسسه حقوقی دادورزان امین</p>
                         <br>
+                        <p>
+                            ما اینجا هستیم تا دسترسی همه افراد به خدمات حقوقی تخصصی، با کیفیت و مقرون‌ به‌ صرفه را آسان
+                            کنیم. ما به‌ عنوان ارائه‌ دهنده آنلاین راهکارهای حقوقی تخصصی به شرکت‌ها و کسب‌ و کارهای
+                            ایران فعالیت می‌کنیم و تا امروز به بیش از 500 شرکت کوچک، متوسط و بزرگ ایرانی کمک کرده‌ایم تا
+                            راه بهتری برای رفع نیازهای قانونی خود بیابند.
+                        </p>
                         <div class="footer-email">
                             <a href="#"><span class="__cf_email__">[email&#160;protected]</span></a>
                         </div>
@@ -17,10 +24,14 @@
                             <h4><a href="tel:09010010011">۰۹۰۱۰۰۱۰۰۱۱</a></h4>
                         </div>
                         <ul class="social">
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="https://www.x.com/?lang=en" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
-                            <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="https://www.facebook.com/" target="_blank"><i
+                                        class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.x.com/?lang=en" target="_blank"><i
+                                        class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><i
+                                        class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://www.linkedin.com/" target="_blank"><i
+                                        class="fab fa-linkedin-in"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -29,16 +40,16 @@
                     <div class="footer-widget__content ps-xl-5">
                         <div class="footer-widget__item">
                             <h4>خدمات موکلین</h4>
-{{--                            <ul class="useful-list">--}}
-{{--                                @if($servicelawyers != null)--}}
-{{--                                    @foreach($servicelawyers as $servicelawyer)--}}
-{{--                                        <li>--}}
-{{--                                            <a href="{{url('خدمات/'.$servicelawyer->slug)}}">{{$servicelawyer->title}}</a>--}}
-{{--                                        </li>--}}
-{{--                                    @endforeach--}}
-{{--                                @endif--}}
+                            {{--                            <ul class="useful-list">--}}
+                            {{--                                @if($servicelawyers != null)--}}
+                            {{--                                    @foreach($servicelawyers as $servicelawyer)--}}
+                            {{--                                        <li>--}}
+                            {{--                                            <a href="{{url('خدمات/'.$servicelawyer->slug)}}">{{$servicelawyer->title}}</a>--}}
+                            {{--                                        </li>--}}
+                            {{--                                    @endforeach--}}
+                            {{--                                @endif--}}
 
-{{--                            </ul>--}}
+                            {{--                            </ul>--}}
                         </div>
 
                         <div class="footer-widget__item">

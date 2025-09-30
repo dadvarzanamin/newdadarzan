@@ -773,18 +773,18 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-6 align-self-center">
-                    <div class="call-to-action-section__img" dir="ltr">
-                        <figure class="image-effect right-reveal">
-                            <img src="{{asset('site/assets/images/call-to-action/1.jpg')}}" alt="action images"
-                                 class="img-fluid w-100">
-                        </figure>
-                        <figure class="image-effect left-reveal">
-                            <img src="{{asset('site/assets/images/call-to-action/2.jpg')}}" alt="action images"
-                                 class="img-fluid w-100">
-                        </figure>
-                    </div>
-                </div>
+{{--                <div class="col-lg-6 align-self-center">--}}
+{{--                    <div class="call-to-action-section__img" dir="ltr">--}}
+{{--                        <figure class="image-effect right-reveal">--}}
+{{--                            <img src="{{asset('site/assets/images/call-to-action/1.jpg')}}" alt="action images"--}}
+{{--                                 class="img-fluid w-100">--}}
+{{--                        </figure>--}}
+{{--                        <figure class="image-effect left-reveal">--}}
+{{--                            <img src="{{asset('site/assets/images/call-to-action/2.jpg')}}" alt="action images"--}}
+{{--                                 class="img-fluid w-100">--}}
+{{--                        </figure>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </section>

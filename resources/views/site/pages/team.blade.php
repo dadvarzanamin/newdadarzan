@@ -13,7 +13,7 @@
                         <h2 class="breadcrumb__title"> با تیم ما آشنا شوید</h2>
                         <ul class="breadcrumb__list">
                             <li class="breadcrumb__item">
-                                <a href="index.html"> خانه</a>
+                                <a href="{{url('/')}}"> خانه</a>
                             </li>
                             <li class="breadcrumb__item">
                                 <i class="fa-solid fa-arrow-left"></i>
@@ -55,7 +55,7 @@
                             </li>
                         </ul>
                         <div class="name-details">
-                            <h4><a href="javascript: void(0);">{{$emploee->fullname}}</a> </h4>
+                            <h4><a href="{{url('تیم-ما/رزومه/'.$emploee->slug)}}">{{$emploee->fullname}}</a> </h4>
                             <p>{{$emploee->side}}</p>
                         </div>
                     </div>
@@ -66,57 +66,57 @@
     </section>
 
 
-    <div class="section-two-bg py-60 @@services-text-slide">
-        <div class="text-slide swiper">
-            <div class="swiper-wrapper slide-transition">
-                <div class="swiper-slide inner-slide-element">
-                    <div class="slide-text">
-                        AI IMAGE GENERATE
-                    </div>
-                </div>
-                <div class="swiper-slide inner-slide-element">
-                    <div class="slide-text">
-                        <img src="assets/images/shape/star.svg" alt="icon">
-                    </div>
-                </div>
-                <div class="swiper-slide inner-slide-element">
-                    <div class="slide-text">
-                        AI IMAGE GENERATE
-                    </div>
-                </div>
-                <div class="swiper-slide inner-slide-element">
-                    <div class="slide-text">
-                        <img src="assets/images/shape/star.svg" alt="icon">
-                    </div>
-                </div>
-                <div class="swiper-slide inner-slide-element">
-                    <div class="slide-text">
-                        AI IMAGE GENERATE
-                    </div>
-                </div>
-                <div class="swiper-slide inner-slide-element">
-                    <div class="slide-text">
-                        <img src="assets/images/shape/star.svg" alt="icon">
-                    </div>
-                </div>
-                <div class="swiper-slide inner-slide-element">
-                    <div class="slide-text">
-                        AI IMAGE GENERATE
-                    </div>
-                </div>
-                <div class="swiper-slide inner-slide-element">
-                    <div class="slide-text">
-                        <img src="assets/images/shape/star.svg" alt="icon">
-                    </div>
-                </div>
-                <div class="swiper-slide inner-slide-element">
-                    <div class="slide-text">
-                        <img src="assets/images/shape/star.svg" alt="icon">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="section-two-bg py-60 @@services-text-slide">--}}
+{{--        <div class="text-slide swiper">--}}
+{{--            <div class="swiper-wrapper slide-transition">--}}
+{{--                <div class="swiper-slide inner-slide-element">--}}
+{{--                    <div class="slide-text">--}}
+{{--                        AI IMAGE GENERATE--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide inner-slide-element">--}}
+{{--                    <div class="slide-text">--}}
+{{--                        <img src="assets/images/shape/star.svg" alt="icon">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide inner-slide-element">--}}
+{{--                    <div class="slide-text">--}}
+{{--                        AI IMAGE GENERATE--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide inner-slide-element">--}}
+{{--                    <div class="slide-text">--}}
+{{--                        <img src="assets/images/shape/star.svg" alt="icon">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide inner-slide-element">--}}
+{{--                    <div class="slide-text">--}}
+{{--                        AI IMAGE GENERATE--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide inner-slide-element">--}}
+{{--                    <div class="slide-text">--}}
+{{--                        <img src="assets/images/shape/star.svg" alt="icon">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide inner-slide-element">--}}
+{{--                    <div class="slide-text">--}}
+{{--                        AI IMAGE GENERATE--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide inner-slide-element">--}}
+{{--                    <div class="slide-text">--}}
+{{--                        <img src="assets/images/shape/star.svg" alt="icon">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide inner-slide-element">--}}
+{{--                    <div class="slide-text">--}}
+{{--                        <img src="assets/images/shape/star.svg" alt="icon">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <!-- =====>> End Text-slide <<=====
     =========================== -->
 @endsection
