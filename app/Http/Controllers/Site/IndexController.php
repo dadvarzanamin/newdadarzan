@@ -474,8 +474,10 @@ class IndexController extends Controller
         $submenus       = Submenu::select('id', 'title', 'slug', 'menu_id')->whereStatus(4)->get();
         $services           = Submenu::select('id','title' , 'slug' , 'menu_id' , 'keyword', 'description')->whereSlug($url[1])->first();
         $medias             = Media::select('aparat','title' , 'file_link' , 'cover')->whereStatus(4)->whereSubmenu_id($services->id)->get();
+        $workshops          = Workshop::where('id' , '!=' , 2)->get();
 
-        return view('site.pages.single-service')->with(compact('menus','thispage','medias'  , 'submenus' , 'services'));
+
+        return view('site.pages.workshops')->with(compact('menus','thispage','workshops' ,'medias'  , 'submenus' , 'services'));
 
     }
 
@@ -494,7 +496,7 @@ class IndexController extends Controller
         $companies      = Company::first();
         $customers      = Customer::select('name', 'image')->whereStatus(4)->whereHome_show(1)->get();
         $posts          = Post::whereStatus(4)->whereHome_show(1)->orderBy('id' , 'DESC')->limit(6)->get();
-        $workshops      = Workshop::where('status', '<>' ,0)->where('id' , '!=' , 2)->OrderBy('id' , 'DESC')->limit(6)->get();
+//      $workshops      = Workshop::where('status', '<>' ,0)->where('id' , '!=' , 2)->OrderBy('id' , 'DESC')->limit(6)->get();
         $singleworkshops = Workshop::whereSlug($slug)->first();
         $services           = Submenu::select('id','title' , 'slug' , 'menu_id' , 'keyword', 'description')->whereSlug($url[1])->first();
         $medias             = Media::select('aparat','title' , 'file_link' , 'cover')->whereStatus(4)->whereSubmenu_id($services->id)->get();
@@ -536,9 +538,9 @@ class IndexController extends Controller
         $companies      = Company::first();
         $services           = Submenu::select('id','title' , 'slug' , 'menu_id', 'keyword', 'description')->whereSlug($url[1])->first();
         $customers          = Customer::select('name' , 'image')->whereStatus(4)->whereHome_show(1)->get();
-//        $medias             = Media::select('aparat','title' , 'file_link' , 'cover')->whereStatus(4)->whereSubmenu_id($services->id)->get();
+        $medias             = Media::select('aparat','title' , 'file_link' , 'cover')->whereStatus(4)->whereSubmenu_id($services->id)->get();
 
-        return view('site.pages.single-service')->with(compact('menus','thispage' , 'companies'  , 'customers' , 'submenus' , 'services'));
+        return view('site.pages.single-service')->with(compact('menus','thispage' ,'medias', 'companies'  , 'customers' , 'submenus' , 'services'));
 
     }
 

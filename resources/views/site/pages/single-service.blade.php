@@ -37,18 +37,21 @@
                     <div class="d-grid row-gap-5">
                         <div class="blog-details-content">
                             {!! $services->description !!}
-                            @foreach($medias as $media)
-                                <div class="card-image m-3">
-                                    @if($media->file_link)
-                                        <video controls preload="metadata" poster="{{asset($media->cover)}}" id="player"
-                                               style="width: 100%">
-                                            <source src="{{asset($media->file_link)}}" type="video/mp4"/>
-                                        </video>
-                                    @elseif($media->aparat)
-                                        {!! $media->aparat !!}
-                                    @endif
-                                </div>
-                            @endforeach
+                            @if($medias)
+                                @foreach($medias as $media)
+                                    <div class="card-image m-3">
+                                        @if($media->file_link)
+                                            <video controls preload="metadata" poster="{{asset($media->cover)}}" id="player"
+                                                   style="width: 100%">
+                                                <source src="{{asset($media->file_link)}}" type="video/mp4"/>
+                                            </video>
+                                        @elseif($media->aparat)
+                                            {!! $media->aparat !!}
+                                        @endif
+                                    </div>
+                                @endforeach
+                            @endif
+
                         </div>
 
                         <div class="blogs-tags">
